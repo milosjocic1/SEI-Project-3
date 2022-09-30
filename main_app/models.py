@@ -15,3 +15,4 @@ from datetime import date
 
 #     def get_absolute_url(self):
 #         return reverse('destinations_detail', kwargs={'pk': self.id})
+
