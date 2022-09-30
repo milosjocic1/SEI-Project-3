@@ -8,27 +8,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Djourneys</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
+    <!-- NAV BAR -->
     <header>
-        <nav>
-            <div>
-                <ul>
-                    <li><a href="{% url 'home' %}" class="">Home</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                </ul>
+        <nav class="navbar ">
+            <div class="container-fluid">
+                <a href="{% url 'home' %}" class="navbar-brand logo">DJANGO DJOURNEYS</a>
+                <div class="d-flex">
+                    <a href="{% url 'home' %}" class="menu-links">Home</a>
+                    <a href="{% url 'about' %}" class="menu-links">About</a>
             </div>
         </nav>
     </header>
+    <!-- END OF NAV BAR -->
 
     <!-- DYNAMIC CONTENT -->
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
-    
+    <!-- END OF DYNAMIC CONTENT -->
+
+    <!-- FOOTER -->
+    <footer>
+        <nav class="row">
+            <div class="col">
+                <a href="{% url 'home' %}" class="navbar-brand logo">DJANGO DJOURNEYS</a>
+            </div>
+            <div class="col">
+                <a href="{% url 'home' %}" class="menu-links">Home</a><br>
+                <a href="{% url 'about' %}" class="menu-links">About</a>
+            </div>
+            <div class="col">
+                <a href="{% url 'home' %}" class="menu-links">Home</a><br>
+                <a href="{% url 'about' %}" class="menu-links">About</a>
+            </div>
+            
+        </nav>
+    </footer>
+
+    <!-- END OF FOOTER -->
 </body>
 </html>
