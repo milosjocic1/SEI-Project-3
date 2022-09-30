@@ -12,10 +12,6 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-
-
-
-
 # HOME PAGE
 def home(request):
     return render(request, 'home.html')
