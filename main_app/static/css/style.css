@@ -4,12 +4,14 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100%;
-    padding: 40px;
+    
+    
 }
 body {
     background-color: transparent;
     font-family: 'Manrope', sans-serif;
+    padding: 40px;
+    height: 100%;
 }
 
 .logo {
@@ -17,11 +19,16 @@ body {
     font-weight: 800;
 }
 
+
 .menu-links {
     font-size: 18px;
     margin-left: 10px;
     color: black;
     text-decoration: none;
+    float: right;
+}
+.menu-links:hover {
+    color: rgb(125, 125, 125);
 }
 
 .hero {
@@ -41,7 +48,7 @@ body {
 
 .start {
     margin-top: 30px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     padding: 15px 60px;
     color: white;
     font-size: 22px;
@@ -49,6 +56,21 @@ body {
     border-radius: 45px;
     font-family: 'Manrope', sans-serif;
 }
+.link-destinations {
+    color: black !important;
+    text-decoration: none;
+}
+div.relative {
+  position: relative;
+  bottom: 580px;
+  left: 145px;
+}
+.show-me {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
 
 
 
@@ -57,4 +79,9 @@ body {
 
 footer {
     padding: 60px 40px;
+    background-color: transparent;
+}
+.footer-links {
+    text-decoration: none;
+    color: black;
 }
