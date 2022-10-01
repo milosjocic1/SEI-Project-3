@@ -20,13 +20,16 @@
 <body>
     <!-- NAV BAR -->
     <header>
-        <nav class="navbar ">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a href="{% url 'home' %}" class="navbar-brand logo">DJANGO DJOURNEYS</a>
-                <div class="d-flex">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <a href="{% url 'home' %}" class="menu-links">Home</a>
-                    <a href="{% url 'about' %}" class="menu-links">About</a>
-            </div>
+                    <a href="{% url 'about' %}" class="menu-links">About</a>   
+                </div>
         </nav>
     </header>
     <!-- END OF NAV BAR -->
@@ -45,12 +48,12 @@
                 <a href="{% url 'home' %}" class="navbar-brand logo">DJANGO DJOURNEYS</a>
             </div>
             <div class="col">
-                <a href="{% url 'home' %}" class="menu-links">Home</a><br>
-                <a href="{% url 'about' %}" class="menu-links">About</a>
+                <a href="{% url 'home' %}" class="footer-links">Home</a><br>
+                <a href="{% url 'about' %}" class="footer-links">About</a>
             </div>
             <div class="col">
-                <a href="{% url 'home' %}" class="menu-links">Home</a><br>
-                <a href="{% url 'about' %}" class="menu-links">About</a>
+                <a href="{% url 'home' %}" class="footer-links">Home</a><br>
+                <a href="{% url 'about' %}" class="footer-links">About</a>
             </div>
             
         </nav>
