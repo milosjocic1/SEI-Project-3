@@ -70,9 +70,36 @@ div.relative {
     color: black;
     text-decoration: none;
 }
+.page-title {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    font-size: 55px;
+    text-align: center;
+    font-weight: 800;
+}
 
-
-
+.each-card {
+    margin-top: 20px;
+    
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+.dest-name {
+    font-size: 26px;
+    font-weight: 600;
+}
+.dest-location {
+    font-size: 18px;
+}
+.dest-country {
+    font-size: 22px;
+    font-weight: 500;
+}
 
 
 
