@@ -2,42 +2,31 @@
 
 {% block content %}
 
-<h1>Destination List</h1>
-
-<!-- start of forloop -->
-{% for destination in destinations %}
-
-<div class="card">
-    <a href="{% url 'detail' destination.id %}">
-    <div class="card-content">
-
-        <div class="flex-container">
-
-            <div>
-            <span class="card-title"> {{ destination.name }} </span>
-            <p>Breed: {{ destination.location }} </p>
-            <p>Description : {{ destination.country }} </p>
-    
-        <!-- open if -->
-      
-            <p>Age: {{ destination.currency }}</p>
-       
-            <p>Age: Kitten</p>
-        <!-- close if -->
-        
-            </div>
-        <!-- image -->
-            <div class="right">
-            {% load static %}
-            <img  height="100px" width="100px"  src= "{{ destination.image }}"" />    
-            </div>
-
-        </div>
-    </div>
-    </a>
+<div class="page">
+    <h1 class="page-title">All Django Djourneys Destinations</h1>
 </div>
 
-<!-- end of forloop -->
+<!-- CARDS -->
+<div class="row card-group">
+{% for destination in destinations %}
+    <div class="col-lg-4 col-sm-12 each-card">
+        <a href="{% url 'detail' destination.id %}">
+        <div class="card">
+            <img src="{{ destination.image }}" class="card-img-top" height="250px" alt="">
+            <div class="card-body">
+                <h5 class="card-title dest-name"> {{ destination.name }}</h5>
+                <p class="card-text">Rating Coming Soon</p>
+                <p class="card-text dest-location">{{ destination.location }}</p>
+                <p class="card-text dest-country">{{ destination.country }}</p>
+            </div>
+        </div>
+        </a>
+    </div>
 {%  endfor %}
+</div>
+<!-- END OF CARDS -->
+
+
+
 
 {% endblock %}
