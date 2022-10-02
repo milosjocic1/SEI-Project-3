@@ -19,6 +19,30 @@
 
 
     </div>
-    
-
+<!-- add review form -->
+<div>
+<form method="post" action="{% url 'add_review' destination.id %}">
+    {% csrf_token %} {{ review_form.as_p }}
+    <input type="submit" value="Add Review" class="btn" />
+  </form>
+</div>
+<hr>
+<table class="striped">
+    <h2>Reviews</h2>
+    <thead>
+      <tr>
+        <th>Rating</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for review in destination.review_set.all %}
+      <tr>
+        <td>{{ review.get_rating_display }}</td>
+        <td>{{ review.content }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}
