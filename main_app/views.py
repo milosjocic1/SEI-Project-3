@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Destination
+from .forms import ReviewForm
 
 # from .models import User, Destination
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -32,4 +33,15 @@ def destinations_index(request):
 def destinations_detail(request, destination_id):
     # SELECT * FROM main_app_cat WHERE id = cat_id
     destination = Destination.objects.get(id = destination_id)
-    return render(request, 'destinations/detail.html', {'destination': destination})
+    review_form = ReviewForm()
+    return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form})
+
+def add_review(request, destination_id):
+    print("add_review")
+    form = ReviewForm(request.POST)
+
+    if form.is_valid():
+        new_review = form.save(commit=False)
+        new_review.destination_id = destination_id
+        new_review.save()
+    return redirect('detail', destination_id = destination_id)
