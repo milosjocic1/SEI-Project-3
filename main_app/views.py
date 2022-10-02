@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import Destination
+
 # from .models import User, Destination
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # from django.views.generic import ListView, DetailView
@@ -19,3 +21,15 @@ def home(request):
 # ABOUT PAGE
 def about(request):
     return render(request, 'about.html')
+
+# DESTINATIONS INDEX
+def destinations_index(request):
+    destinations = Destination.objects.all()
+    return render(request, 'destinations/index.html', {'destinations': destinations})
+
+
+# DESTINATIONS DETAIL:
+def destinations_detail(request, destination_id):
+    # SELECT * FROM main_app_cat WHERE id = cat_id
+    destination = Destination.objects.get(id = destination_id)
+    return render(request, 'destinations/detail.html', {'destination': destination})
