@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Destination List</h1>
+
+<!-- start of forloop -->
+{% for destination in destinations %}
+
+<div class="card">
+    <a href="{% url 'detail' destination.id %}">
+    <div class="card-content">
+
+        <div class="flex-container">
+
+            <div>
+            <span class="card-title"> {{ destination.name }} </span>
+            <p>Breed: {{ destination.location }} </p>
+            <p>Description : {{ destination.country }} </p>
+    
+        <!-- open if -->
+      
+            <p>Age: {{ destination.currency }}</p>
+       
+            <p>Age: Kitten</p>
+        <!-- close if -->
+        
+            </div>
+        <!-- image -->
+            <div class="right">
+            {% load static %}
+            <img  height="100px" width="100px"  src= "{{ destination.image }}"" />    
+            </div>
+
+        </div>
+    </div>
+    </a>
+</div>
+
+<!-- end of forloop -->
+{%  endfor %}
+
+{% endblock %}
