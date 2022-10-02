@@ -20,3 +20,24 @@ class Destination(models.Model):
 
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})
+
+RATINGS = (
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5')
+)
+
+class Review(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    rating = models.CharField(max_length=1, choices=RATINGS, default=RATINGS[0][0])
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+    content = models.TextField(max_length=300)
+    # user = models.ForeignKey
+
+    def __str__(self):
+        return f"{self.get_review_display()} on {self.date}"
+
+    # class Meta:
+        # ordering = ['-date']

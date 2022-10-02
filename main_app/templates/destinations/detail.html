@@ -19,6 +19,11 @@
 
 
     </div>
-    
-
+<!-- add review form -->
+<div>
+<form method="post" action="{% url 'add_review' destination.id %}">
+    {% csrf_token %} {{ review_form.as_p }}
+    <input type="submit" value="Add Review" class="btn" />
+  </form>
+</div>
 {% endblock %}
