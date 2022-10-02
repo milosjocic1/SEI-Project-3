@@ -6,14 +6,13 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">{{ destination.name }}</span>
-        <p>Breed: {{ destination.country }}</p>
-        <p>Description: {{ destination.location }}</p>
+        <p>Location: {{ destination.location }}</p>
+        <p>Country: {{ destination.country }}</p>
 
             <!-- AGE open if -->
    
-            <p>Age: {{ destination.currency }}</p>
- 
-            <p>Age: Kitten</p>
+            <p>Currency: {{ destination.currency }}</p>
+
         <!-- close if AGE -->
       
 
@@ -31,15 +30,19 @@
     <h2>Reviews</h2>
     <thead>
       <tr>
+        <th>Title</th>
         <th>Rating</th>
         <th>Review</th>
+        <th>Created At</th>
       </tr>
     </thead>
     <tbody>
       {% for review in destination.review_set.all %}
       <tr>
+        <td>{{ review.title }} </td>
         <td>{{ review.get_rating_display }}</td>
         <td>{{ review.content }}</td>
+        <td>{{ review.created_at }}</td>
       </tr>
       {% endfor %}
     </tbody>
