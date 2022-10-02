@@ -5,7 +5,13 @@ from django.urls import reverse
 from datetime import date
 
 # Create your models here.
-
+RATINGS = (
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5')
+)
 # class User(models.Model)
 class Destination(models.Model):
     name = models.CharField(max_length=100)
@@ -21,14 +27,6 @@ class Destination(models.Model):
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})
 
-RATINGS = (
-    ('1', '1'),
-    ('2', '2'),
-    ('3', '3'),
-    ('4', '4'),
-    ('5', '5')
-)
-
 class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     rating = models.CharField(max_length=1, choices=RATINGS, default=RATINGS[0][0])
@@ -37,7 +35,7 @@ class Review(models.Model):
     # user = models.ForeignKey
 
     def __str__(self):
-        return f"{self.get_review_display()} on {self.date}"
+        return f"{self.get_rating_display()} on {self.date}"
 
-    # class Meta:
-        # ordering = ['-date']
+    class Meta:
+        ordering = ['-content']
