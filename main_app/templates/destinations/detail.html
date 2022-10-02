@@ -2,47 +2,56 @@
 
 {% block content %}
 
-<h1>Destination Details</h1>
-<div class="card">
-    <div class="card-content">
-        <span class="card-title">{{ destination.name }}</span>
-        <p>Breed: {{ destination.country }}</p>
-        <p>Description: {{ destination.location }}</p>
-
-            <!-- AGE open if -->
-   
-            <p>Age: {{ destination.currency }}</p>
- 
-            <p>Age: Kitten</p>
-        <!-- close if AGE -->
-      
-
-
+<div class="page">
+    <h1 class="page-title"> {{ destination.name }} </h1>
+    <a href="{% url 'index' %}">Back to all destinations</a><br><br>
+    <!-- IMAGE AND MAP -->
+    <div class="row">
+        <div class="col col-lg-8 col-sm-12">
+             <img src="{{ destination.image }}"  class="img-fluid dest-image" width="100%" height="450px" alt="">
+        </div>
+        <div class="col col-lg-4 col-sm-12">
+            <!-- MAP API WILL BE ADDED HERE -->
+            <img src="{{ destination.image }}"  class="img-fluid map-api" width="100%" height="450px" alt="">
+        </div>
     </div>
-<!-- add review form -->
-<div>
-<form method="post" action="{% url 'add_review' destination.id %}">
-    {% csrf_token %} {{ review_form.as_p }}
-    <input type="submit" value="Add Review" class="btn" />
-  </form>
-</div>
-<hr>
-<table class="striped">
-    <h2>Reviews</h2>
-    <thead>
-      <tr>
-        <th>Rating</th>
-        <th>Review</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for review in destination.review_set.all %}
-      <tr>
-        <td>{{ review.get_rating_display }}</td>
-        <td>{{ review.content }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+    <!-- END OF IMAGE AND MAP -->
+    <!-- DETAILS -->
+    <div class="row m-1 mt-5 dest-details">
+        <h2 class="dest-details-name">{{ destination.name }}</h2> <br> <br> <br>
+        <p class="dest-details-text"> <span class="dest-details-key">Location:</span> {{ destination.location }}</p>
+        <p class="dest-details-text"> <span class="dest-details-key">Country:</span> {{ destination.country }}</p>
+        <p class="dest-details-text"> <span class="dest-details-key">Currency:</span> {{ destination.currency }}</p>
+    </div>
+    <!-- END OF DETAILS -->
+    <!-- REVIEWS -->
+    <div class="row m-1 mt-5 dest-details">
+        <div class="div-with-button">
+        <h2 class="dest-details-name"> Reviews for {{ destination.name }}</h2> <br> <br> <br>
+        <a href="#Reviews" class="add-review-button">Add a review</a>
+        </div>
+        
+        {% for review in destination.review_set.all %}
+        <p class="review-title">{{ review.title }} <span>{{ review.get_rating_display }}</span></p>
+        <p class="review-content">{{ review.content }}</p>
+        <!-- WILL ADD USER PROFILE PIC AND NAME HERE -->
+        <p class="review-created">Written on {{ review.created_at }}</p> <br><br><br>
+        <hr>
+        {% endfor %}
+    </div>
+    <!-- END OF REVIEWS -->
+    <!-- REVIEW FORM -->
+    <a name="Reviews">
+    <div class="row m-1 mt-5 dest-details">
+        <h2 class="dest-details-name"> Leave a review for {{ destination.name }}</h2> <br> <br> <br>
+        <form method="post" action="{% url 'add_review' destination.id %}">
+        {% csrf_token %} {{ review_form.as_p }}
+        <input type="submit" value="Add Review" class="submit-button" />
+        </form>
+    </div>
+    </a>
+
+</div>    
+
+
 {% endblock %}

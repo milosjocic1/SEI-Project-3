@@ -29,6 +29,7 @@ class Destination(models.Model):
 
 class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
+    title = models.TextField(max_length=30, default="")
     rating = models.CharField(max_length=1, choices=RATINGS, default=RATINGS[0][0])
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
     content = models.TextField(max_length=300)
@@ -38,4 +39,4 @@ class Review(models.Model):
         return f"{self.get_rating_display()} on {self.date}"
 
     class Meta:
-        ordering = ['-content']
+        ordering = ['-created_at']
