@@ -100,9 +100,73 @@ a:hover {
     font-size: 22px;
     font-weight: 500;
 }
+.dest-image {
+    border-radius: 20px;
+    height: 600px;
+}
+.map-api {
+    border-radius: 20px;
+}
 
+.dest-details {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+.dest-details-name {
+    font-size: 40px;
+    font-weight: 600;
+}
+.dest-details-text {
+    font-size: 22px;
+    font-weight: 600;
+}
+.div-with-button {
+    display: flex;
+}
+.add-review-button {
+    position: absolute;
+    right: 15%;
+    background-color: black;
+    padding: 20px 40px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+}
+.add-review-button:hover {
+    color: white;
+}
+.review-title {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.review-content {
+    font-size: 22px;
 
-
+}
+/* CSS FOR DJANGO FORMS */
+label {
+    font-size: 22px;
+}
+textarea {
+    width: 100%;
+    font-size: 22px;
+}
+#id_title {
+    height: 45px; 
+}
+#id_content {
+    height: 120px;
+}
+.submit-button {
+    background-color: black;
+    padding: 20px 40px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    border: none;
+}
 
 footer {
     padding: 60px 40px;
