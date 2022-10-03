@@ -20,7 +20,7 @@ class Destination(models.Model):
     country = models.CharField(max_length=50)
     currency = models.CharField(max_length=100)
     image = models.CharField(max_length=500)
-    keywords = models.CharField(max_length=20)
+    keywords = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
