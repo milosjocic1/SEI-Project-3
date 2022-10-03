@@ -3,6 +3,7 @@ from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.urls import reverse
 from datetime import date
+from django.contrib.auth.models import User
 
 # Create your models here.
 RATINGS = (
@@ -33,7 +34,7 @@ class Review(models.Model):
     rating = models.CharField(max_length=1, choices=RATINGS, default=RATINGS[0][0])
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
     content = models.TextField(max_length=300)
-    # user = models.ForeignKey
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.get_rating_display()} on {self.date}"
