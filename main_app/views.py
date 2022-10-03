@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Destination
+from .models import Destination, Review
 from .forms import ReviewForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # from .models import User, Destination
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -50,3 +54,24 @@ def add_review(request, destination_id, user_id):
         new_review.user_id = user_id
         new_review.save()
     return redirect('detail', destination_id = destination_id)
+
+@login_required
+def profile(request):
+    return render(request, 'users/profile.html')
+
+def signup(request):
+    error_message = ""
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('index')
+        else:
+            error_message = "Invalid signup - please try again later"
+
+    # GET
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
