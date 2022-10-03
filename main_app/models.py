@@ -37,7 +37,7 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_rating_display()} on {self.date}"
+        return f"{self.get_rating_display()} on {self.created_at}"
 
     class Meta:
         ordering = ['-created_at']
