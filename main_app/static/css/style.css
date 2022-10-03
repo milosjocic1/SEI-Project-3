@@ -55,6 +55,9 @@ body {
     border-radius: 45px;
     font-family: 'Manrope', sans-serif;
 }
+.start:hover {
+    color:white;
+}
 .link-destinations {
     color: black !important;
     text-decoration: none;
