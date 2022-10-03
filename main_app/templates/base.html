@@ -30,7 +30,15 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <a href="{% url 'home' %}" class="menu-links">Home</a>
-                    <a href="{% url 'about' %}" class="menu-links">About</a>   
+                    <a href="{% url 'about' %}" class="menu-links">About</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="menu-links">Log Out</a>
+                    
+                    Hi {{ user.username }}
+                    {% else %}
+                    <a href="{% url 'signup' %}" class="menu-links">Sign Up</a>
+                    <a href="{% url 'login' %}" class="menu-links">Log In</a>
+                    {% endif %}
                 </div>
         </nav>
     </header>
