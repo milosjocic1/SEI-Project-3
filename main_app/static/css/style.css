@@ -121,17 +121,20 @@ a:hover {
     font-size: 22px;
     font-weight: 600;
 }
+.dest-details-key {
+    font-weight: 400;
+}
 .div-with-button {
     display: flex;
 }
 .add-review-button {
-    position: absolute;
-    right: 15%;
     background-color: black;
-    padding: 20px 40px;
     border-radius: 15px;
     color: white;
     font-weight: 500;
+    font-size: 22px; 
+    padding: 1.5% 2%; 
+    text-align: center;
 }
 .add-review-button:hover {
     color: white;
