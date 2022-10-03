@@ -47,7 +47,6 @@ body {
 }
 
 .start {
-    margin-top: 30px;
     background-color: rgb(0, 0, 0);
     padding: 15px 80px;
     color: white;
@@ -69,6 +68,7 @@ div.relative {
     text-align: center;
     color: black;
     text-decoration: none;
+   
 }
 .page-title {
     padding-top: 70px;
@@ -121,17 +121,20 @@ a:hover {
     font-size: 22px;
     font-weight: 600;
 }
+.dest-details-key {
+    font-weight: 400;
+}
 .div-with-button {
     display: flex;
 }
 .add-review-button {
-    position: absolute;
-    right: 15%;
     background-color: black;
-    padding: 20px 40px;
     border-radius: 15px;
     color: white;
     font-weight: 500;
+    font-size: 22px; 
+    padding: 1.5% 2%; 
+    text-align: center;
 }
 .add-review-button:hover {
     color: white;
@@ -167,6 +170,50 @@ textarea {
     font-weight: 500;
     border: none;
 }
+
+.question-div {
+    align-items: center;
+    background-image: url("https://cdn.wallpapersafari.com/33/32/ekgu4L.jpg");
+}
+.quiz-row {
+    height: 600px;
+    background-color: white;
+    background-size: cover;
+}
+.question-div {
+    position: relative;
+}
+.quiz-question {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    color: white;
+    padding: 20px 40px;
+    
+}
+.answer-div {
+    position: relative;
+    padding: 20px 40px;
+}
+.all-answers-div {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 65px;
+}
+.answer {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 30px;  
+}
+.answer:hover {
+    color: pink
+}
+
 
 footer {
     padding: 60px 40px;
