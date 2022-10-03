@@ -40,12 +40,13 @@ def destinations_detail(request, destination_id):
     review_form = ReviewForm()
     return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form})
 
-def add_review(request, destination_id):
+def add_review(request, destination_id, user_id):
     print("add_review")
     form = ReviewForm(request.POST)
 
     if form.is_valid():
         new_review = form.save(commit=False)
         new_review.destination_id = destination_id
+        new_review.user_id = user_id
         new_review.save()
     return redirect('detail', destination_id = destination_id)

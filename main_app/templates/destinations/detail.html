@@ -44,7 +44,7 @@
     <a name="Reviews">
     <div class="row m-1 mt-5 dest-details">
         <h2 class="dest-details-name"> Leave a review for {{ destination.name }}</h2> <br> <br> <br>
-        <form method="post" action="{% url 'add_review' destination.id %}">
+        <form method="post" action="{% url 'add_review' destination.id user.id %}">
         {% csrf_token %} {{ review_form.as_p }}
         <input type="submit" value="Add Review" class="submit-button" />
         </form>
