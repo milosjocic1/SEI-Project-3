@@ -26,9 +26,9 @@
     <!-- END OF DETAILS -->
     <!-- REVIEWS -->
     <div class="row m-1 mt-5 dest-details">
-        <div class="div-with-button">
-        <h2 class="dest-details-name"> Reviews for {{ destination.name }}</h2> <br> <br> <br>
-        <a href="#Reviews" class="add-review-button">Add a review</a>
+        <div class="div-with-button row">
+        <h2 class="col-10 dest-details-name"> Reviews for {{ destination.name }}</h2> <br> <br> <br>
+        <a href="#Reviews" class=" col-2  add-review-button">Add a review</a>
         </div>
         
         {% for review in destination.review_set.all %}

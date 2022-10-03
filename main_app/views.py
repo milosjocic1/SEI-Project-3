@@ -23,6 +23,10 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+# QUIZ PAGE
+def quiz(request):
+    return render(request, 'quiz.html')
+
 # DESTINATIONS INDEX
 def destinations_index(request):
     destinations = Destination.objects.all()
