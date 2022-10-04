@@ -1,12 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-<<<<<<< HEAD
-from .models import Destination, Rating, Review
+from .models import Destination
 from .forms import ReviewForm, UpdateUserForm, UpdateProfileForm
-=======
 from .models import Destination
 from .forms import ReviewForm
->>>>>>> 08e8ce99ecaa182155765a5b37ec3da330a427a1
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login
