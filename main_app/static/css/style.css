@@ -107,8 +107,10 @@ a:hover {
     border-radius: 20px;
     height: 600px;
 }
-.map-api {
+.weather-div {
     border-radius: 20px;
+    background-color: #ffffff57;
+    padding: 30px 20px;
 }
 
 .dest-details {
@@ -267,7 +269,7 @@ input:checked ~ label, label:hover ~ label{
 }
 /* HOVER HIGHLIGHT */ 
 input:checked + label:hover, input:checked ~ label:hover, input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
-    color: #817aba
+    color: #ffb503;
 }
 .fa-star {
     color: #ffb503;
