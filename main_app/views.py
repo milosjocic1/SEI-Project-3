@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Destination, Rating, Review
+from .models import Destination
 from .forms import ReviewForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
@@ -64,16 +64,7 @@ def add_review(request, destination_id, user_id):
         new_review.save()
     return redirect('detail', destination_id = destination_id)
 
-def add_rating(request, destination_id, user_id):
-    print("add_rating")
 
-    form = Rating(request.POST)
-    if form.is_valid():
-        new_rating = form.save(commit=False)
-        new_rating.destination_id = destination_id
-        new_rating.user_id = user_id
-        new_rating.save()
-    return redirect('detail', destination_id = destination_id)
 
 @login_required
 def profile(request):
