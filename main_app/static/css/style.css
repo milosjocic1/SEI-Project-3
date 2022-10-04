@@ -267,7 +267,7 @@ input:checked ~ label, label:hover ~ label{
 }
 /* HOVER HIGHLIGHT */ 
 input:checked + label:hover, input:checked ~ label:hover, input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
-    color: #817aba
+    color: #ffb503;
 }
 .fa-star {
     color: #ffb503;
