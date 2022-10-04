@@ -52,6 +52,7 @@ def destinations_detail(request, destination_id):
     review_form = ReviewForm()
     return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form})
 
+@login_required
 def add_review(request, destination_id, user_id):
     print("add_review")
     form = ReviewForm(request.POST)

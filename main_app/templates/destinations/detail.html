@@ -28,7 +28,7 @@
     <div class="row m-1 mt-5 dest-details">
         <div class="div-with-button row">
         <h2 class="col-10 dest-details-name"> Reviews for {{ destination.name }}</h2> <br> <br> <br>
-        <a href="#Reviews" class=" col-2  add-review-button">Add a review</a>
+        <a href="{% url 'login' %}" class=" col-2  add-review-button">Add a review</a>
         </div>
         
         {% for review in destination.review_set.all %}
@@ -43,12 +43,16 @@
     <!-- REVIEW FORM -->
     <a name="Reviews">
     <div class="row m-1 mt-5 dest-details">
+      {% if user.is_authenticated %}
         <h2 class="dest-details-name"> Leave a review for {{ destination.name }}</h2> <br> <br> <br>
         <form method="post" action="{% url 'add_review' destination.id user.id %}"></form>
         {% csrf_token %} {{ review_form.as_p }}
         {{ ratings_form.as_p }}
         <input type="submit" value="Add Review" class="submit-button" />
         </form>
+        {% else %}
+        <h2>Please log in to leave a review</h2>
+        {% endif %}
     </div>
     </a>
 
