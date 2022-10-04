@@ -9,5 +9,6 @@ urlpatterns = [
     path('destinations/<int:destination_id><int:user_id>/add_review', views.add_review, name='add_review'),
     # Quiz
     path('quiz/', views.quiz, name='quiz'),
-    path('accounts/signup/', views.signup, name='signup')
+    path('accounts/signup/', views.signup, name='signup'),
+    path('users/profile/', views.profile, name='users-profile')
 ]

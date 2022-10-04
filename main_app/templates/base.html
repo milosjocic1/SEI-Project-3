@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- CSS -->
+         <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- CSS LINK SHEET -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -35,6 +38,7 @@
                     <a href="{% url 'logout' %}" class="menu-links">Log Out</a>
                     
                     Hi {{ user.username }}
+                    <a href="{% url 'users-profile' %}" class="menu-links">Profile</a>
                     {% else %}
                     <a href="{% url 'signup' %}" class="menu-links">Sign Up</a>
                     <a href="{% url 'login' %}" class="menu-links">Log In</a>

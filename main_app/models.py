@@ -6,6 +6,7 @@ from django import forms
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
+from django.db.models import Avg, Count
 
 # Create your models here.
 RATINGS = (
@@ -27,28 +28,50 @@ class Destination(models.Model):
     def __str__(self):
         return self.name
 
+    # AVERAGE REVIEWS AND COUNT:
+    def averageReview(self):
+        reviews = Review.objects.filter(destination=self).aggregate(average=Avg('rating'))
+        avg = 0
+        if reviews['average'] is not None:
+            avg = int(reviews['average'])
+        return avg
+
+    def countReview(self):
+        reviews = Review.objects.filter(destination=self).aggregate(count=Count('id'))
+        count = 0
+        if reviews['count'] is not None:
+            count = int(reviews['count'])
+        return count
+    # END OF AVERAGE REVIEWS AND COUNT
+
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})
+
+
 
 class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.TextField(max_length=30, default="")
-    rating = models.CharField(max_length=1, choices=RATINGS, default=RATINGS[0][0])
+    rating = models.FloatField()
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
     content = models.TextField(max_length=300)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_rating_display()} on {self.created_at}"
+        return f"{self.title} on {self.created_at}"
 
     class Meta:
         ordering = ['-created_at']
 
-class Rating(forms.Form):
-    ratings = forms.CharField(label='How would you rate your trip?', widget=forms.RadioSelect(choices=RATINGS))
+
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
+    bio = models.TextField()
 
     def __str__(self):
-        return self.ratings
-    
-    
+        return self.user.username
+
 
