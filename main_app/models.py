@@ -1,6 +1,8 @@
 from nturl2path import url2pathname
+# from tkinter import Widget
 from unittest.util import _MAX_LENGTH
 from django.db import models
+from django import forms
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
@@ -41,3 +43,12 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+class Rating(forms.Form):
+    ratings = forms.CharField(label='How would you rate your trip?', widget=forms.RadioSelect(choices=RATINGS))
+
+    def __str__(self):
+        return self.ratings
+    
+    
+

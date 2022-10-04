@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Destination, Review
+from .models import Destination, Rating, Review
 from .forms import ReviewForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+# PAGINATION
+from django.core.paginator import Paginator
 
 # from .models import User, Destination
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -34,7 +37,12 @@ def quiz(request):
 # DESTINATIONS INDEX
 def destinations_index(request):
     destinations = Destination.objects.all()
-    return render(request, 'destinations/index.html', {'destinations': destinations})
+    # PAGINATION
+    p = Paginator(Destination.objects.all(), 15)
+    page = request.GET.get('page')
+    dest = p.get_page(page)
+
+    return render(request, 'destinations/index.html', {'dest': dest, 'destinations': destinations})
 
 
 # DESTINATIONS DETAIL:
@@ -53,6 +61,17 @@ def add_review(request, destination_id, user_id):
         new_review.destination_id = destination_id
         new_review.user_id = user_id
         new_review.save()
+    return redirect('detail', destination_id = destination_id)
+
+def add_rating(request, destination_id, user_id):
+    print("add_rating")
+
+    form = Rating(request.POST)
+    if form.is_valid():
+        new_rating = form.save(commit=False)
+        new_rating.destination_id = destination_id
+        new_rating.user_id = user_id
+        new_rating.save()
     return redirect('detail', destination_id = destination_id)
 
 @login_required
