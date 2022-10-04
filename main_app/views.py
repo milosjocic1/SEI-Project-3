@@ -9,7 +9,8 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+# WEATHER
+import requests
 # PAGINATION
 from django.core.paginator import Paginator
 
@@ -53,7 +54,8 @@ def destinations_detail(request, destination_id):
     # SELECT * FROM main_app_cat WHERE id = cat_id
     destination = Destination.objects.get(id = destination_id)
     review_form = ReviewForm()
-    return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form})
+
+    return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form })
 
 @login_required
 def add_review(request, destination_id, user_id):

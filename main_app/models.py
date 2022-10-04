@@ -24,10 +24,13 @@ class Destination(models.Model):
     currency = models.CharField(max_length=100)
     image = models.CharField(max_length=500)
     keywords = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+
+        class Meta:
+            verbose_name_plural = 'cities'
 
     # AVERAGE REVIEWS AND COUNT:
     def averageReview(self):
@@ -44,6 +47,10 @@ class Destination(models.Model):
             count = int(reviews['count'])
         return count
     # END OF AVERAGE REVIEWS AND COUNT
+
+    # START OF WEATHER API
+
+    # END OF WEATHER API
 
     def get_absolute_url(self):
         return reverse('destinations_detail', kwargs={'pk': self.id})
