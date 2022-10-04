@@ -1,13 +1,18 @@
 from django.forms import ModelForm
+<<<<<<< HEAD
 from django import forms
 from django.contrib.auth.models import User
 from .models import RATINGS, Review, Rating, Profile
+=======
+
+from .models import Review
+>>>>>>> 08e8ce99ecaa182155765a5b37ec3da330a427a1
 
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = ['title', 'content']
-        ratings = Rating
+        fields = ['title', 'content', 'rating']
+        
 
 class UpdateUserForm(forms.ModelForm):
     username = forms.CharField(max_length=100,
