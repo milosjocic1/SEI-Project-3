@@ -2,13 +2,14 @@
 
 {% block content %}
 
+
 <div class="page">
     <h1 class="page-title">All Django Djourneys Destinations</h1>
 
 
 <!-- CARDS -->
 <div class="row card-group">
-{% for destination in destinations %}
+{% for destination in dest %}
     <div class="col-lg-4 col-sm-12 each-card">
         <a href="{% url 'detail' destination.id %}">
         <div class="card">
@@ -26,7 +27,20 @@
 </div>
 <!-- END OF CARDS -->
 </div>
+<br><br><br>
 
-
+<!-- PAGINATION -->
+<div class="pagination-div">
+    {% if dest.has_previous %}
+<a class="pagination" href="?page=1">&laquo First</a>
+<a class="pagination" href="? page={{ dest.previous_page_number }}">Previous</a>
+{% endif %}
+<p  class="pagination"> Page {{ dest.number }} of {{ dest.paginator.num_pages }}</p>
+{% if dest.has_next %}
+<a class="pagination" href="?page={{ dest.next_page_number }}">Next</a>
+<a class="pagination" href="?page={{ dest.paginator.num_pages }} ">Last &raquo</a>
+{% endif %}
+</div>
+<!-- END OF PAGINATION -->
 
 {% endblock %}
