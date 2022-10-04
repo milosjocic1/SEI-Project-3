@@ -55,6 +55,9 @@ body {
     border-radius: 45px;
     font-family: 'Manrope', sans-serif;
 }
+.start:hover {
+    color:white;
+}
 .link-destinations {
     color: black !important;
     text-decoration: none;
@@ -213,7 +216,15 @@ textarea {
 .answer:hover {
     color: pink
 }
-
+.pagination-div {
+    display: flex;
+    justify-content: center;
+}
+.pagination {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 20px;
+}
 
 footer {
     padding: 60px 40px;

@@ -7,6 +7,9 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+# PAGINATION
+from django.core.paginator import Paginator
+
 # from .models import User, Destination
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # from django.views.generic import ListView, DetailView
@@ -34,7 +37,12 @@ def quiz(request):
 # DESTINATIONS INDEX
 def destinations_index(request):
     destinations = Destination.objects.all()
-    return render(request, 'destinations/index.html', {'destinations': destinations})
+    # PAGINATION
+    p = Paginator(Destination.objects.all(), 15)
+    page = request.GET.get('page')
+    dest = p.get_page(page)
+
+    return render(request, 'destinations/index.html', {'dest': dest, 'destinations': destinations})
 
 
 # DESTINATIONS DETAIL:
