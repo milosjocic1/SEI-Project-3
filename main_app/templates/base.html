@@ -35,6 +35,7 @@
                     <a href="{% url 'logout' %}" class="menu-links">Log Out</a>
                     
                     Hi {{ user.username }}
+                    <a href="{% url 'users-profile' %}" class="menu-links">Profile</a>
                     {% else %}
                     <a href="{% url 'signup' %}" class="menu-links">Sign Up</a>
                     <a href="{% url 'login' %}" class="menu-links">Log In</a>
