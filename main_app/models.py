@@ -24,6 +24,7 @@ class Destination(models.Model):
     currency = models.CharField(max_length=100)
     image = models.CharField(max_length=500)
     keywords = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
