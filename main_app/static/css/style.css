@@ -111,8 +111,17 @@ a:hover {
     border-radius: 20px;
     background-color: #ffffff57;
     padding: 30px 20px;
+    height: 220px;
+    font-size: 18px;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
 }
 
+#map {
+    height: 355px;
+    border-radius: 20px;
+}
 .dest-details {
     background-color: white;
     padding: 40px;
