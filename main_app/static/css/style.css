@@ -85,6 +85,9 @@ div.relative {
     margin-top: 20px;
     
 }
+.average-rating-index {
+    font-size: 18px;
+}
 a {
     color: black;
     text-decoration: none;
@@ -97,11 +100,12 @@ a:hover {
     font-weight: 600;
 }
 .dest-location {
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 500;
 }
 .dest-country {
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 700;
 }
 .dest-image {
     border-radius: 20px;

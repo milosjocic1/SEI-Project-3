@@ -21,7 +21,17 @@
             <img src="{{ destination.image }}" class="card-img-top" height="250px" alt="">
             <div class="card-body">
                 <h5 class="card-title dest-name"> {{ destination.name }}</h5>
-                <p class="card-text">{{ destination.averageReview }}</p>
+                <span class="show-ratings">
+			    <i class="fa fa-star{% if destination.averageReview < 0.5 %}-o{% elif destination.averageReview >= 0.5 and destination.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+			    <i class="fa fa-star{% if destination.averageReview < 1.5 %}-o{% elif destination.averageReview >= 1.5 and destination.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+			    <i class="fa fa-star{% if destination.averageReview < 2.5 %}-o{% elif destination.averageReview >= 2.5 and destination.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+			    <i class="fa fa-star{% if destination.averageReview < 3.5 %}-o{% elif destination.averageReview >= 3.5 and destination.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+			    <i class="fa fa-star{% if destination.averageReview < 4.5 %}-o{% elif destination.averageReview >= 4.5 and destination.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                {% if destination.averageReview == 0 %}
+                    <p><span class="card-text average-rating-index">No reviews yet</span></p>
+                {% else %}
+                   <p><span class="card-text average-rating-index">{{ destination.averageReview }} stars</span></p> 
+                {% endif %}
                 <p class="card-text dest-location">{{ destination.location }}</p>
                 <p class="card-text dest-country">{{ destination.country }}</p>
             </div>
