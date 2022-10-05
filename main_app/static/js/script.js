@@ -55,3 +55,5 @@ function geocodeAddress(geocoder, resultsMap) {
     }
   });
 }
+
+function quiz()
