@@ -8,8 +8,8 @@
 
     <form method="POST" action="{% url 'search' %}" class="d-flex">
         {% csrf_token %}
-        <input type="search" placeholder="Search" class="form-control me-2" aria-label="Search">
-        <button type="submit" class="btn btn-outline-secondary">Search</button>
+        <input type="search" placeholder="Search" class="form-control me-2" aria-label="Search" name="searched">
+        <button type="submit" class="btn btn-outline-secondary">Search Countries</button>
     </form>
 
 <!-- CARDS -->
