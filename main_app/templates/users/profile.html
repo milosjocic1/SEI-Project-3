@@ -2,11 +2,12 @@
 {% block title %}Profile Page{% endblock title %}
 {% block content %}
     <div class="row my-3 p-3">
+        {% load static %}
         <h1>{{user.username}}'s Profile</h1>
-        <img src="{{ user.profile.avatar }}" alt="" />
+        <img src="{% static user.profile.avatar.url %}" alt="" style="width: 100px; height: 100px;" />
         <div>{{ user.email }}</div>
        <div> {{ user.profile.bio }}</div>
-       <div><button type="update" href="{% url 'users_profile_update' %}" class="btn btn-dark btn-lg">Update profile</button></div>
+       <div><a href="{% url 'profile_update' %}" class="btn btn-dark btn-lg">Update profile</a></div>
     </div>
 
 {% endblock content %}

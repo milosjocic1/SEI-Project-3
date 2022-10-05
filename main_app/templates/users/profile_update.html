@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Profile Page{% endblock title %}
+{% block title %}Profile Update Page{% endblock title %}
 {% block content %}
 
 {{ user.profile.user }}
@@ -21,7 +21,7 @@
         </div>
     {% endif %}
     <div class="form-content">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" action="{% url 'users_profile' %}">
             {% csrf_token %}
             <div class="form-row">
                 <div class="col-md-5">
@@ -42,7 +42,6 @@
             </div>
             <br><br>
             <button type="submit" class="btn btn-dark btn-lg">Save Changes</button>
-            <button type="reset" class="btn btn-dark btn-lg">Reset</button>
         </form>
     </div>
 {% endblock content %}
