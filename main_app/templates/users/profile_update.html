@@ -4,7 +4,7 @@
 
     <div class="row my-3 p-3">
         {% load static %}
-        <img class="rounded-circle account-img" src="{% static user.profile.avatar.url %}" style="width: 130px; height: 100px;"/>
+        <img class="rounded-circle account-img" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" style="width: 130px; height: 100px;"/>
     </div>
     {% if user_form.errors %}
         <div class="alert alert-danger alert-dismissible" role="alert">
