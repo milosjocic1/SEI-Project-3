@@ -12,3 +12,4 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('users/profile/', views.profile, name='users-profile')
 ]
+ 
