@@ -2,11 +2,9 @@
 {% block title %}Profile Update Page{% endblock title %}
 {% block content %}
 
-{{ user.profile.user }}
-{{ user.profile.bio }}
-
     <div class="row my-3 p-3">
-        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;"/>
+        {% load static %}
+        <img class="rounded-circle account-img" src="{% static user.profile.avatar.url %}" style="width: 130px; height: 100px;"/>
     </div>
     {% if user_form.errors %}
         <div class="alert alert-danger alert-dismissible" role="alert">
@@ -21,7 +19,7 @@
         </div>
     {% endif %}
     <div class="form-content">
-        <form method="post" enctype="multipart/form-data" action="{% url 'users_profile' %}">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-row">
                 <div class="col-md-5">
