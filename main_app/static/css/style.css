@@ -111,11 +111,14 @@ a:hover {
     border-radius: 20px;
     background-color: #ffffff57;
     padding: 30px 20px;
+    padding-right: 50px;
     height: 220px;
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 600;
     align-items: center;
-    justify-content: center;
+}
+.weather-temp {
+    font-size: 30px;
 }
 
 #map {
