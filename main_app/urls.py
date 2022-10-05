@@ -10,5 +10,6 @@ urlpatterns = [
     # Quiz
     path('quiz/', views.quiz, name='quiz'),
     path('accounts/signup/', views.signup, name='signup'),
-    path('users/profile/', views.profile, name='users-profile')
+    path('users/profile/', views.profile, name='users_profile'),
+    path('users/profile_update/', views.profile, name='users_profile_update')
 ]

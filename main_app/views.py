@@ -69,10 +69,12 @@ def add_review(request, destination_id, user_id):
         new_review.save()
     return redirect('detail', destination_id = destination_id)
 
-
-
 @login_required
 def profile(request):
+    return render(request, 'users/profile.html')
+
+@login_required
+def profile_update(request):
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
@@ -81,12 +83,12 @@ def profile(request):
             user_form.save()
             profile_form.save()
             messages.success(request, 'Your profile is updated successfully')
-            return redirect(to='users-profile')
+            return redirect(to='profile_update')
     else:
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateProfileForm(instance=request.user.profile)
 
-    return render(request, 'users/profile.html', {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'users/profile_update.html', {'user_form': user_form, 'profile_form': profile_form})
 
 def signup(request):
     error_message = ""
