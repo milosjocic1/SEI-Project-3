@@ -50,7 +50,14 @@ def destinations_index(request):
 
 def search(request):
     if request.method == 'POST':
+        searched = request.POST['searched']
+        searched = searched.capitalize()
+        countries = Destination.objects.filter(country__contains=searched)
+        return render(request, 'search.html', {'searched': searched, 'countries': countries})
+    else:
         return render(request, 'search.html')
+
+
 
 
 # DESTINATIONS DETAIL:
