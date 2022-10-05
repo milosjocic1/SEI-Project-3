@@ -10,6 +10,7 @@ urlpatterns = [
     # Quiz
     path('quiz/', views.quiz, name='quiz'),
     path('accounts/signup/', views.signup, name='signup'),
-    path('users/profile/', views.profile, name='users-profile')
+    path('users/profile/', views.profile, name='users-profile'),
+    path('search/', views.search, name="search")
 ]
  
