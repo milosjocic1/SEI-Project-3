@@ -5,132 +5,115 @@
 <div class="page">
     <h1 class="page-title"> {{ destination.name }} </h1>
     <a href="{% url 'index' %}">Back to all destinations</a><br><br>
-    
-    <!-- IMAGE AND WEATHER -->
-    <div class="row">
-        <div class="col col-lg-8 col-sm-12">
-             <img src="{{ destination.image }}"  class="img-fluid dest-image" width="100%" height="450px" alt="">
-        </div>
-        <div class="col col-lg-4 col-sm-12">
-        <!-- WEATHER -->
-            <div class="weather-div row">
-                <div class="col col-8">
-                    <p >Current Temperature: <span class="weather-temp" id="weather-temp"></span></p>
-                    <p>Feels like: <span id="weather-feel"></span></p>
-                    <p> <span id="weather-desc"></span></p>
-                </div>
-                <div class="col col-4">
-                    <img  class= "weather-icon" id="icon"  width="150" alt="" />
-                </div>
-            </div><br>
-            <!-- MAP -->
-            <di class="row">
-                <div class="map" id="map"></div>
-            </di>
-             
-        </div>
-    </div>
-    <!-- END OF IMAGE AND WEATHER -->
-    <!-- MAP -->
-   
-    <!-- END OF MAP -->
-    <!-- DETAILS -->
-    <div class="row m-1 mt-5 dest-details">
-        <h2 class="dest-details-name">{{ destination.name }}</h2> 
-    <!-- AVERAGE STARS -->
-            <span class="show-ratings">
-			<i class="fa fa-star{% if destination.averageReview < 0.5 %}-o{% elif destination.averageReview >= 0.5 and destination.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
-			<i class="fa fa-star{% if destination.averageReview < 1.5 %}-o{% elif destination.averageReview >= 1.5 and destination.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
-			<i class="fa fa-star{% if destination.averageReview < 2.5 %}-o{% elif destination.averageReview >= 2.5 and destination.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
-			<i class="fa fa-star{% if destination.averageReview < 3.5 %}-o{% elif destination.averageReview >= 3.5 and destination.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
-			<i class="fa fa-star{% if destination.averageReview < 4.5 %}-o{% elif destination.averageReview >= 4.5 and destination.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-	<span class="average-title">Average Rating: {{ destination.averageReview }} <span class="based-on-reviews">based on {{destination.countReview}} reviews</span></span>
-			</span> <br><br><br>
-    <!-- END OF AVERAGE STARS -->
-        <p class="dest-details-text"> <span class="dest-details-key">Location:</span> <span id="city">{{ destination.location }}</span></p>
-        <p class="dest-details-text"> <span class="dest-details-key">Country:</span> {{ destination.country }}</p>
-        <p class="dest-details-text"> <span class="dest-details-key">Currency:</span> {{ destination.currency }}</p>
-    </div>
-    <!-- END OF DETAILS -->
-    <!-- REVIEWS -->
-    <div class="row m-1 mt-5 dest-details">
-        <div class="div-with-button row">
-        <h2 class="col-10 dest-details-name"> Reviews for {{ destination.name }}</h2> <br> <br> <br>
-        <a href="{% url 'login' %}" class=" col-2  add-review-button">Add a review</a>
-        </div>
-        
-        {% for review in destination.review_set.all %}
-        <p class="review-title">{{ review.title }}</p>
-        <!-- STARS INSTEAD OF NUMBERS -->
-            <span class="show-ratings">
-			    <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
-				<i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
-				<i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true"></i>
-				<i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
-				<i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
-			</span>
-        <p class="review-content">{{ review.content }}</p> <br><br>
-        <!-- WILL ADD USER PROFILE PIC AND NAME HERE -->
-        <!-- PROFILE IMAGE AND USER -->
-        {% load static %}
+        <!-- IMAGE AND WEATHER -->
         <div class="row">
-            <div class="col">
-                <img class="profile-review-image" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" />  <span>Written by {{user.username}}</span>
+            <div class="col col-lg-8 col-sm-12">
+                <img src="{{ destination.image }}"  class="img-fluid dest-image" width="100%" height="450px" alt="">
+            </div>
+            <div class="col col-lg-4 col-sm-12">
+            <!-- WEATHER -->
+                <div class="weather-div row">
+                    <div class="col col-8">
+                        <p >Current Temperature: <span class="weather-temp" id="weather-temp"></span></p>
+                        <p>Feels like: <span id="weather-feel"></span></p>
+                        <p> <span id="weather-desc"></span></p>
+                    </div>
+                    <div class="col col-4">
+                        <img  class= "weather-icon" id="icon"  width="150" alt="" />
+                    </div>
+                </div><br>
+                <!-- MAP -->
+                <di class="row">
+                    <div class="map" id="map"></div>
+                </di>
+                
             </div>
         </div>
-        <p class="review-created">Reviewed on {{ review.created_at }}</p> 
-        <hr>
+        <!-- END OF IMAGE AND WEATHER -->
         
-        {% endfor %}
-    </div>
-    <!-- END OF REVIEWS -->
-    <!-- REVIEW FORM -->
-    <!-- <a name="Reviews">
-    <div class="row m-1 mt-5 dest-details">
-      {% if user.is_authenticated %}
-        <h2 class="dest-details-name"> Leave a review for {{ destination.name }}</h2> <br> <br> <br>
-        <form method="post" action="{% url 'add_review' destination.id user.id %}">
-        {% csrf_token %} {{ review_form.as_p }}
-        
-        <input type="submit" value="Add Review" class="submit-button" />
-        </form>
-        {% else %}
-        <h2>Please log in to leave a review</h2>
-        {% endif %} -->
-
-        <!-- ATTEMPT TO ADD REVIEW WITH RATING -->
+        <!-- DETAILS -->
         <div class="row m-1 mt-5 dest-details">
-            {% if user.is_authenticated %}
-        <form method="post" action="{% url 'add_review' destination.id user.id %}">
-            {% csrf_token %} 
-            <h2>Write your review</h2>
-                <div>
-                    <!-- Rating stars -->
-                    <label for="">How do you rate this place?</label>
-                    <br>
-                    <div class="rate">
-                        <input type="radio" name="rating" id="rating10" value="5"><label for="rating10" title="5"></label>
-                        <!-- <input type="radio" name="rating" id="rating9" value="4.5"><label for="rating9" title="4.5" class="half"></label> -->
-                        <input type="radio" name="rating" id="rating8" value="4"><label for="rating8" title="4"></label>
-                        <!-- <input type="radio" name="rating" id="rating7" value="3.5"><label for="rating7" title="3.5" class="half"></label> -->
-                        <input type="radio" name="rating" id="rating6" value="3"><label for="rating6" title="3"></label>
-                        <!-- <input type="radio" name="rating" id="rating5" value="2.5"><label for="rating5" title="2.5" class="half"></label> -->
-                        <input type="radio" name="rating" id="rating4" value="2"><label for="rating4" title="2"></label>
-                        <!-- <input type="radio" name="rating" id="rating3" value="1.5"><label for="rating3" title="1.5" class="half"></label> -->
-                        <input type="radio" name="rating" id="rating2" value="1"><label for="rating2" title="1"></label>
-                        <!-- <input type="radio" name="rating" id="rating1" value="0.5"><label for="rating1" title="0.5" class="half"></label> -->
-                    </div><br><br>
-                    <h3>Title:</h3>
-                    <input type="text" class="review-title-field" name="title"><br><br>
-                    <h3>Content:</h3>
-                    <input type="text" class="review-content-field" name="content"><br><br>
-                    <input type="submit" value="Add Review" class="submit-button" />
+            <h2 class="dest-details-name">{{ destination.name }}</h2> 
+            <!-- AVERAGE STARS -->
+                <span class="show-ratings">
+                <i class="fa fa-star{% if destination.averageReview < 0.5 %}-o{% elif destination.averageReview >= 0.5 and destination.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if destination.averageReview < 1.5 %}-o{% elif destination.averageReview >= 1.5 and destination.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if destination.averageReview < 2.5 %}-o{% elif destination.averageReview >= 2.5 and destination.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if destination.averageReview < 3.5 %}-o{% elif destination.averageReview >= 3.5 and destination.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if destination.averageReview < 4.5 %}-o{% elif destination.averageReview >= 4.5 and destination.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <span class="average-title">Average Rating: {{ destination.averageReview }} <span class="based-on-reviews">based on {{destination.countReview}} reviews</span></span>
+                </span> <br><br><br>
+            <!-- END OF AVERAGE STARS -->
+            <p class="dest-details-text"> <span class="dest-details-key">Location:</span> <span id="city">{{ destination.location }}</span></p>
+            <p class="dest-details-text"> <span class="dest-details-key">Country:</span> {{ destination.country }}</p>
+            <p class="dest-details-text"> <span class="dest-details-key">Currency:</span> {{ destination.currency }}</p>
+        </div>
+        <!-- END OF DETAILS -->
+        <!-- REVIEWS -->
+        <div class="row m-1 mt-5 dest-details">
+            <div class="div-with-button row">
+                <h2 class="col-10 dest-details-name"> Reviews for {{ destination.name }}</h2> <br> <br> <br>
+                <a href="{% url 'login' %}" class=" col-2  add-review-button">Add a review</a>
+            </div>
+            
+            {% for review in destination.review_set.all %}
+                <p class="review-title">{{ review.title }}</p>
+                <!-- STARS INSTEAD OF NUMBERS -->
+                <span class="show-ratings">
+                    <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
+                    <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
+                </span>
+                <p class="review-content">{{ review.content }}</p> <br><br>
+            <!-- WILL ADD USER PROFILE PIC AND NAME HERE -->
+            <!-- PROFILE IMAGE AND USER -->
+            {% load static %}
+            <div class="row">
+                <div class="col">
+                    <img class="profile-review-image" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" />  <span>Written by {{user.username}}</span>
                 </div>
-        </form>
-        {% else %}
-        <h2>Please log in to leave a review</h2>
-        {% endif %}
-        <!-- END OF ATTEMPT REVIEW WITH RATING -->
+            </div>
+            <p class="review-created">Reviewed on {{ review.created_at }}</p> 
+            <hr>
+            {% endfor %}
+        </div>
+        <!-- END OF REVIEWS -->
+
+        <!-- FORM REVIEW WITH RATING -->
+        <div class="row m-1 mt-5 dest-details">
+                {% if user.is_authenticated %}
+            <form method="post" action="{% url 'add_review' destination.id user.id %}">
+                {% csrf_token %} 
+                <h2>Write your review</h2>
+                    <div>
+                        <!-- Rating stars -->
+                        <label for="">How do you rate this place?</label>
+                        <br>
+                        <div class="rate">
+                            <input type="radio" name="rating" id="rating10" value="5"><label for="rating10" title="5"></label>
+                            <!-- <input type="radio" name="rating" id="rating9" value="4.5"><label for="rating9" title="4.5" class="half"></label> -->
+                            <input type="radio" name="rating" id="rating8" value="4"><label for="rating8" title="4"></label>
+                            <!-- <input type="radio" name="rating" id="rating7" value="3.5"><label for="rating7" title="3.5" class="half"></label> -->
+                            <input type="radio" name="rating" id="rating6" value="3"><label for="rating6" title="3"></label>
+                            <!-- <input type="radio" name="rating" id="rating5" value="2.5"><label for="rating5" title="2.5" class="half"></label> -->
+                            <input type="radio" name="rating" id="rating4" value="2"><label for="rating4" title="2"></label>
+                            <!-- <input type="radio" name="rating" id="rating3" value="1.5"><label for="rating3" title="1.5" class="half"></label> -->
+                            <input type="radio" name="rating" id="rating2" value="1"><label for="rating2" title="1"></label>
+                            <!-- <input type="radio" name="rating" id="rating1" value="0.5"><label for="rating1" title="0.5" class="half"></label> -->
+                        </div><br><br>
+                        <h3>Title:</h3>
+                        <input type="text" class="review-title-field" name="title"><br><br>
+                        <h3>Content:</h3>
+                        <input type="text" class="review-content-field" name="content"><br><br>
+                        <input type="submit" value="Add Review" class="submit-button" />
+                    </div>
+            </form>
+            {% else %}
+            <h2>Please log in to leave a review</h2>
+            {% endif %}
+            <!-- END OF ATTEMPT REVIEW WITH RATING -->
         </div>
     </div>
     </a>

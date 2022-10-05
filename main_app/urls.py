@@ -12,6 +12,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('users/profile/', views.profile, name='users_profile'),
     path('users/profile_update/', views.profile_update, name='profile_update'),
-    path('search/', views.search, name="search")
+    path('search/', views.search, name="search"),
+    path('review/<int:pk>/delete', views.ReviewDelete.as_view(), name='delete_review')
 ]
  

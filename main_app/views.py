@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Destination
+from .models import Destination, Review
 from .forms import ReviewForm, UpdateUserForm, UpdateProfileForm
 from .models import Destination
 from .forms import ReviewForm
+from django.views.generic.edit import DeleteView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login
@@ -50,7 +51,14 @@ def destinations_index(request):
 
 def search(request):
     if request.method == 'POST':
+        searched = request.POST['searched']
+        searched = searched.capitalize()
+        countries = Destination.objects.filter(country__contains=searched)
+        return render(request, 'search.html', {'searched': searched, 'countries': countries})
+    else:
         return render(request, 'search.html')
+
+
 
 
 # DESTINATIONS DETAIL:
@@ -58,7 +66,6 @@ def destinations_detail(request, destination_id):
     # SELECT * FROM main_app_cat WHERE id = cat_id
     destination = Destination.objects.get(id = destination_id)
     review_form = ReviewForm()
-
     return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form })
 
 @login_required
@@ -72,6 +79,17 @@ def add_review(request, destination_id, user_id):
         new_review.user_id = user_id
         new_review.save()
     return redirect('detail', destination_id = destination_id)
+
+
+# DELETE REVIEW
+# def delete_review(self):
+#     self.review.delete()
+#     return f"{self.get_review_display()} on {self.user.username}"
+# END OF DELETE REVIEW
+class ReviewDelete(DeleteView):
+    model = Review
+    success_url = '/'
+
 
 @login_required
 def profile(request):

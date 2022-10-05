@@ -10,4 +10,22 @@
        <div><a href="{% url 'profile_update' %}" class="btn btn-dark btn-lg">Update profile</a></div>
     </div>
 
+
+    <!-- REVIEWS -->
+    <h2 class="dest-details-name">Your reviews</h2> 
+    {% for review in user.review_set.all %}
+    <div class="row m-1 mt-5 dest-details">
+        <h3 class="">{{ review.destination}}</h3> 
+        <p class="review-title">{{ review.title }}</p>
+        <p class="review-content">{{ review.content }}</p>
+        <p class="review-content">Your rating: {{ review.rating }}</p>
+
+        
+        <a href="{% url 'delete_review' review.id %}">Delete</a>
+        
+    </div>
+    
+    
+    {% endfor %}
+    <!-- END OF REVIEWS -->
 {% endblock content %}
