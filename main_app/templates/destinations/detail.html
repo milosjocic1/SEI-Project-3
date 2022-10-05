@@ -69,9 +69,16 @@
 				<i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
 				<i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
 			</span>
-        <p class="review-content">{{ review.content }}</p>
+        <p class="review-content">{{ review.content }}</p> <br><br>
         <!-- WILL ADD USER PROFILE PIC AND NAME HERE -->
-        <p class="review-created">Written on {{ review.created_at }}</p> <br><br><br>
+        <!-- PROFILE IMAGE AND USER -->
+        {% load static %}
+        <div class="row">
+            <div class="col">
+                <img src="{% static user.profile.avatar.url %}" alt="" style="width: 50px; height: 50px;" />  <span>Written by {{user.username}}</span>
+            </div>
+        </div>
+        <p class="review-created">Reviewed on {{ review.created_at }}</p> 
         <hr>
         
         {% endfor %}
