@@ -11,7 +11,7 @@ urlpatterns = [
     path('quiz/', views.quiz, name='quiz'),
     path('accounts/signup/', views.signup, name='signup'),
     path('users/profile/', views.profile, name='users_profile'),
-    path('users/profile_update/', views.profile, name='users_profile_update'),
+    path('users/profile_update/', views.profile_update, name='profile_update'),
     path('search/', views.search, name="search")
 ]
  
