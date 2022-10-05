@@ -48,6 +48,10 @@ def destinations_index(request):
 
     return render(request, 'destinations/index.html', {'dest': dest, 'destinations': destinations})
 
+def search(request):
+    if request.method == 'POST':
+        return render(request, 'search.html')
+
 
 # DESTINATIONS DETAIL:
 def destinations_detail(request, destination_id):
