@@ -3,8 +3,6 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import RATINGS, Review, Profile
 
-from .models import Review
-
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
