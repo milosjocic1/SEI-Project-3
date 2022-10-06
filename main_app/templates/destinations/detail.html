@@ -4,11 +4,11 @@
 
 <div class="page">
     <h1 class="page-title"> {{ destination.name }} </h1>
-    <a href="{% url 'index' %}">Back to all destinations</a><br><br>
+    <p  class="back"><a href="{% url 'index' %}"> &#8592; Back to all destinations</a></p>
         <!-- IMAGE AND WEATHER -->
-        <div class="row">
+        <div class="row m-1 mt-5 pl-0">
             <div class="col col-lg-8 col-sm-12">
-                <img src="{{ destination.image }}"  class="img-fluid dest-image" width="100%" height="450px" alt="">
+                <img src="{{ destination.image }}"  class="img-fluid dest-image"  height="450px" alt="">
             </div>
             <div class="col col-lg-4 col-sm-12">
             <!-- WEATHER -->
@@ -70,7 +70,7 @@
             <!-- WILL ADD USER PROFILE PIC AND NAME HERE -->
             <!-- PROFILE IMAGE AND USER -->
             {% load static %}
-            <div class="row">
+            <div class="row m-1 mt-5">
                 <div class="col">
                     <img class="profile-review-image" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" />  <span>Written by {{user.username}}</span>
                 </div>
