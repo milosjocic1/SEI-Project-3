@@ -29,7 +29,7 @@ answerOne.on("click", function() {
     j += 2;
     k += 2;
     if (i == 4) {
-        
+        $('input').prop("type", "submit");
     }
     console.log(text);
 });
@@ -48,6 +48,9 @@ answerTwo.on("click", function() {
     i++;
     j += 2;
     k += 2;
+    if (i == 4) {
+        $('input').prop("type", "submit");
+    }
     console.log(text);
 });
 
