@@ -29,7 +29,7 @@ answerOne.on("click", function() {
     j += 2;
     k += 2;
     if (i == 4) {
-
+        
     }
     console.log(text);
 });
