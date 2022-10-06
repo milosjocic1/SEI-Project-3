@@ -42,11 +42,12 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
                     <div class="navbar-nav">
-                        <a href="{% url 'home' %}" class="nav-item nav-link menu-links">Home</a>
-                        <a href="{% url 'about' %}" class="nav-item nav-link menu-links">About</a>
+                        
                         {% if user.is_authenticated %}
                         <a href="{% url 'logout' %}" class="nav-item nav-link menu-links">Log Out</a>
-                        <a href="{% url 'users_profile' %}" class="nav-item nav-link menu-links">Hi {{ user.username }}</a>
+                        <a href="{% url 'users_profile' %}" class="nav-item nav-link menu-links">Logged in as <strong>{{ user.username }}</strong> </a>            
+                        <img class="account-img" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" style="width: 40px; height: 40px;" />
+
                         {% else %}
                         <a href="{% url 'signup' %}" class="nav-item nav-link menu-links">Sign Up</a>
                         <a href="{% url 'login' %}" class="nav-item nav-link menu-links">Log In</a>
