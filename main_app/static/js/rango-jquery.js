@@ -10,6 +10,7 @@ let k = 1;
 let question = $(".quiz-question");
 let answerOne = $('#answerOne');
 let answerTwo = $('#answerTwo');
+let answerThree = $('#answerThree');
 question.text(questionsToAsk[i]);
 answerOne.text(answers[j]);
 answerTwo.text(answers[k]);
@@ -24,6 +25,9 @@ answerOne.on("click", function() {
     answerTwo.fadeOut(1000, function() {
         answerTwo.text(answers[k]).fadeIn(1000);
     });
+    answerThree.fadeOut(1000, function() {
+        answerThree.fadeIn(1000);
+    });
     text += keywords[j] + " ";
     $('#results').val(text);
     i++;
@@ -34,6 +38,7 @@ answerOne.on("click", function() {
         $('#results').val(text);
         answerOne.fadeOut(1000);
         answerTwo.fadeOut(1000);
+        answerThree.fadeOut(1000);
         $('#quiz-button').delay(1500).fadeIn(500);
         $('#quiz-button').prop("type", "submit");
     }
@@ -50,6 +55,9 @@ answerTwo.on("click", function() {
     answerTwo.fadeOut(1000, function() {
         answerTwo.text(answers[k]).fadeIn(1000);
     });
+    answerThree.fadeOut(1000, function() {
+        answerThree.fadeIn(1000);
+    });
     text += keywords[k] + " ";
     $('#results').val(text);
     i++;
@@ -60,6 +68,34 @@ answerTwo.on("click", function() {
         $('#results').val(text);
         answerOne.fadeOut(1000);
         answerTwo.fadeOut(1000);
+        answerThree.fadeOut(1000);
+        $('#quiz-button').delay(1500).fadeIn(500);
+        $('#quiz-button').prop("type", "submit");
+    }
+    console.log(text);
+});
+answerThree.on("click", function() {
+    if (i < 3) {
+    question.fadeOut(1000, function() {
+        question.text(questionsToAsk[i]).fadeIn(1000);
+    });
+    answerOne.fadeOut(1000, function() {
+        answerOne.text(answers[j]).fadeIn(1000);
+    });
+    answerTwo.fadeOut(1000, function() {
+        answerTwo.text(answers[k]).fadeIn(1000);
+    });
+    answerThree.fadeOut(1000, function() {
+        answerThree.fadeIn(1000);
+    });
+    i++;
+    j += 2;
+    k += 2;
+} else if (i == 3) {
+        text += keywords[k] + " ";
+        answerOne.fadeOut(1000);
+        answerTwo.fadeOut(1000);
+        answerThree.fadeOut(1000);
         $('#quiz-button').delay(1500).fadeIn(500);
         $('#quiz-button').prop("type", "submit");
     }
