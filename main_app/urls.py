@@ -13,6 +13,7 @@ urlpatterns = [
     path('users/profile/', views.profile, name='users_profile'),
     path('users/profile_update/', views.profile_update, name='profile_update'),
     path('search/', views.search, name="search"),
-    path('review/<int:pk>/delete', views.ReviewDelete.as_view(), name='delete_review')
+    path('review/<int:pk>/delete', views.ReviewDelete.as_view(), name='delete_review'),
+    path('results/', views.destinations_index, name="results")
 ]
  

@@ -6,7 +6,7 @@
         {% load static %}
         <h1 class="page-title">{{user.username}}'s Profile</h1>
         <div class="col d-flex justify-content-center">
-            <img class="account-img" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" style="width: 200px;" />
+            <img class="account-img" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" style="width: 400px;" />
         </div>
         <div class="col align-self-center">
             <p class="dest-details-text ">Your email: {{ user.email }}</p>

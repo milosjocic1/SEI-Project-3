@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block content %}
+{% load static %}
 {% if searched %}
-<h1>You Searched For {{ searched }}</h1>
+<h1 class="page-title">Here are some destinations we think you'll love...</h1>
 <br>
 <div class="row card-group">
     {% for country in countries %}
@@ -25,7 +26,7 @@
                 <p><span class="card-text average-rating-index">{{ country.averageReview }} stars</span></p> 
                 {% endif %}
                 <p class="card-text dest-location">{{ country.location }}</p>
-                <p class="card-text dest-country">{{ country.country }}</p>
+                <p class="card-text dest-country">{{ country }}</p>
             </div>
         </div>  
         </a>
