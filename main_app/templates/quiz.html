@@ -17,7 +17,7 @@
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                   <input type="hidden" id="results" value="" name="results">
-                  <input type="hidden" value="Find my holiday!" id="quiz-button"/>
+                  <input type="submit" value="Find my holiday!" id="quiz-button"/>
                 </form>  
             </div>
             
