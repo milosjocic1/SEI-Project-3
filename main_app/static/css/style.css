@@ -391,3 +391,25 @@ footer {
 .dev-text {
     font-size: 22px;
 }
+
+
+/* MOBILE */
+@media (max-width: 428px) {
+    .home-title {
+        font-size: 55px
+    }
+    .answer {
+        font-size: 22px;
+    }
+    .quiz-question {
+        font-size: 28px;
+        position: absolute;
+        top: 70%;
+    }
+    #quiz-button, #quiz-button:hover {
+        font-size: 18px;
+        position: relative;
+        bottom: 120px;
+        left: 10px;
+    }
+}
