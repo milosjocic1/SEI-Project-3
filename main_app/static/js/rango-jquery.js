@@ -1,8 +1,4 @@
 $(document).ready(function() {
-
-    function redirect(text) {
-        window.location.reload("/")
-    };
     
 let questionsToAsk = ["Which is your happy place?", "Do you like it hot - or not?", "Do you love romance or long for adventure?", "Are you a culture vulture or do you love to explore?"];
 let answers = ["The countryside", "The city", "Sandy beaches", "Snowy landscapes", "Going on safari", "Croissants in Paris", "Bring me the horizon", "Give me history"]
@@ -32,6 +28,9 @@ answerOne.on("click", function() {
     i++;
     j += 2;
     k += 2;
+    if (i == 4) {
+
+    }
     console.log(text);
 });
 answerTwo.on("click", function() {
