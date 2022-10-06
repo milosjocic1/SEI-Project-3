@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+   
+    <div class="row profile-div">
+        {% load static %}
+        <h1 class="page-title">{{user.username}}'s Profile</h1>
+        <div class="col d-flex justify-content-center">
+            <img class="account-img" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" style="width: 200px;" />
+        </div>
+        <div class="col align-self-center">
+            <p class="dest-details-text ">Your email: {{ user.email }}</p>
+            <p class="dest-details-text  ">Your details: {{ user.profile.bio }}</p> <br>
+            <a href="{% url 'profile_update' %}" class="btn btn-dark btn-lg  ">Update profile</a>
+        </div>  
+    </div> <br><br><br><br>
+
+     
+
+
+    <!-- REVIEWS -->
+    <h2 class="dest-details-name">Your reviews</h2> <br>
+    {% for review in user.review_set.all %}
+        <div class="row dest-details">
+            <h3 class="">{{ review.destination}}</h3> 
+            <p class="review-title">{{ review.title }}</p>
+            <p class="review-content">{{ review.content }}</p>
+            <p class="review-content">Your rating: {{ review.rating }}</p>
+            <a class="delete" href="{% url 'delete_review' review.id %}">Delete this Review</a>    
+        </div> 
+    {% endfor %}
+    <!-- END OF REVIEWS -->
+{% endblock content %}

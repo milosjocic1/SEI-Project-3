@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static }
+{% block content %}
+
+<div class="page container">
+    <h1 class="page-title"> Let's find your next Destination </h1>
+
+    <div class="row quiz-row">
+        <div class="col question-div">
+            <p class="quiz-question">La La La La?</p>
+        </div>
+        <div class="col answer-div">
+            <div class="all-answers-div">
+                <a class="answer" id="answerOne" href="#">Answer 1</a><br>
+                <a class="answer" id="answerTwo" href="#">Answer 2</a>
+            </div>
+            
+        </div>
+    </div>
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+      <input type="hidden" id="results" value="" name="results">
+      <input type="submit" value="submit"/>
+    </form>  
+</div>
+
+{% endblock %}
+

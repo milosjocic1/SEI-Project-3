@@ -47,7 +47,6 @@ body {
 }
 
 .start {
-    margin-top: 30px;
     background-color: rgb(0, 0, 0);
     padding: 15px 80px;
     color: white;
@@ -55,6 +54,9 @@ body {
     border: none;
     border-radius: 45px;
     font-family: 'Manrope', sans-serif;
+}
+.start:hover {
+    color:white;
 }
 .link-destinations {
     color: black !important;
@@ -69,6 +71,7 @@ div.relative {
     text-align: center;
     color: black;
     text-decoration: none;
+   
 }
 .page-title {
     padding-top: 70px;
@@ -82,6 +85,9 @@ div.relative {
     margin-top: 20px;
     
 }
+.average-rating-index {
+    font-size: 18px;
+}
 a {
     color: black;
     text-decoration: none;
@@ -89,20 +95,261 @@ a {
 a:hover {
     color: black;
 }
+.search-div {
+    display: inline-flexbox;
+    justify-content: center;
+}
+.text-field {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto;
+    margin-right: 20px;
+    padding-left: 20px;
+}
 .dest-name {
     font-size: 26px;
     font-weight: 600;
 }
 .dest-location {
-    font-size: 18px;
-}
-.dest-country {
     font-size: 22px;
     font-weight: 500;
 }
+.dest-country {
+    font-size: 22px;
+    font-weight: 700;
+}
+.dest-image {
+    border-radius: 20px;
+    height: 600px;
+    padding-left: -20px;
+}
+.weather-div {
+    border-radius: 20px;
+    background-color: #ffffff57;
+    padding: 30px 20px;
+    padding-right: 50px;
+    height: 220px;
+    font-size: 18px;
+    font-weight: 600;
+    align-items: center;
+}
+.weather-temp {
+    font-size: 30px;
+}
+
+#map {
+    height: 355px;
+    border-radius: 20px;
+}
+.dest-details {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+.dest-details-name {
+    font-size: 40px;
+    font-weight: 600;
+}
+.dest-details-text {
+    font-size: 22px;
+    font-weight: 600;
+}
+.dest-details-key {
+    font-weight: 400;
+}
+.div-with-button {
+    display: flex;
+}
+.profile-div {
+    min-height: 650px ;
+}
+.profile-review-image {
+    border-radius: 45px;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+.add-review-button {
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 22px; 
+    padding: 1.5% 2%; 
+    text-align: center;
+}
+.add-review-button:hover {
+    color: white;
+}
+.review-title {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.review-content {
+    font-size: 22px;
+}
+/* CSS FOR DJANGO FORMS */
+.review-title-field {
+    font-size: 22px;
+    width: 100%;
+    height: 45px;
+}
+.account-img {
+    border-radius: 20px;
+}
+.delete {
+    display: inline-block !important;
+    background-color: black;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 22px;
+}
+.delete:hover {
+    color: white;
+}
+.back {
+    text-align: center !important;
+    margin-top: -30px;
+}
+label {
+    font-size: 22px;
+}
+#id_username , #id_password1, #id_password2, #id_username, #id_password {
+    width: 100%;
+    font-size: 22px;
+    height: 40px;
+    border-radius: 10px;
+}
 
 
 
+/* textarea {
+    width: 100%;
+    font-size: 22px;
+}  */
+/* #id_title {
+    height: 45px; 
+} */
+.review-content-field{
+    font-size: 22px;
+    width: 100%;
+    height: 120px;
+}
+.submit-button {
+    background-color: black;
+    padding: 20px 40px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    font-size: 18px;
+}
+
+.question-div {
+    align-items: center;
+    background-image: url("https://cdn.wallpapersafari.com/33/32/ekgu4L.jpg");
+}
+.quiz-row {
+    height: 600px;
+    background-color: white;
+    background-size: cover;
+}
+.question-div {
+    position: relative;
+}
+.quiz-question {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    color: white;
+    padding: 20px 40px;
+    
+}
+.answer-div {
+    position: relative;
+    padding: 20px 40px;
+}
+.all-answers-div {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 65px;
+}
+.answer {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 30px;  
+}
+.answer:hover {
+    color: pink
+}
+.pagination-div {
+    display: flex;
+    justify-content: center;
+}
+.pagination {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 20px;
+}
+
+/* RATING */
+/* Riding radio buttons */
+.rate > input {
+    display:none;
+}
+.rate {
+    display: inline-block;
+    border: 0;
+}
+.rate > label {
+    float: right;
+}
+/* Showing stars */
+.rate > label:before{
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: FontAwesome;
+    content: "\f005";
+    margin: 0;
+    padding: 0.3rem .2rem;
+    cursor: pointer;
+}
+/* half stars */
+.rate .half:before{
+    content: "\f089";
+    position: absolute;
+    padding-right: 0;
+}
+/* Click on hover */
+input:checked ~ label, label:hover ~ label{
+    color: #ffb503;
+}
+/* HOVER HIGHLIGHT */ 
+input:checked + label:hover, input:checked ~ label:hover, input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
+    color: #ffb503;
+}
+.fa-star {
+    color: #ffb503;
+}
+.show-ratings {
+    font-size: 22px;
+}
+.based-on-reviews {
+    font-size: 18px;
+    margin-left: 20px;
+}
+.average-title {
+    margin-left: 20px;
+}
 
 footer {
     padding: 60px 40px;
@@ -111,4 +358,23 @@ footer {
 .footer-links {
     text-decoration: none;
     color: black;
+}
+
+/* ABOUT US */
+.about-us {
+    min-height: 800px;
+}
+.dev-photo {
+    border-radius: 20px;
+}
+.dev-name {
+    font-size: 34px;
+    font-weight: 600;
+}
+.dev-description {
+    font-size: 22px;
+    font-weight: 600;
+}
+.dev-text {
+    font-size: 22px;
 }
