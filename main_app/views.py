@@ -70,7 +70,7 @@ def destinations_index(request):
         # countries = Destination.objects.filter(Q(keywords__contains=resultsList[0].strip()) | Q(keywords__contains=resultsList[1].strip()) | Q(keywords__contains=resultsList[2].strip()) | Q(keywords__contains=resultsList[3].strip()))
         countries = Destination.objects.filter(reduce(operator.and_, (Q(keywords__contains=x) for x in resultsList)))
         print(countries)
-        return render(request, 'search.html', {'searched': results, 'countries': countries})
+        return render(request, 'results.html', {'searched': results, 'countries': countries})
     else:
         destinations = Destination.objects.all()
     # PAGINATION

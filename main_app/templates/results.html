@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% if searched %}
+<h1 class="page-title">Here are some destinations we think you'll love...</h1>
+<br>
+<div class="row card-group">
+    {% for country in countries %}
+
+    <div class="col-lg-4 col-sm-12 each-card">
+        <a href="{% url 'detail' country.id %}">
+        <div class="card">
+            <img src="{{ country.image }}" class="card-img-top" height="250px" alt="">
+            <div class="card-body">
+                <h5 class="card-title dest-name"> {{ country.name }}</h5>
+                <span class="show-ratings">
+                <i class="fa fa-star{% if country.averageReview < 0.5 %}-o{% elif country.averageReview >= 0.5 and country.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if country.averageReview < 1.5 %}-o{% elif country.averageReview >= 1.5 and country.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if country.averageReview < 2.5 %}-o{% elif country.averageReview >= 2.5 and country.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if country.averageReview < 3.5 %}-o{% elif country.averageReview >= 3.5 and country.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                <i class="fa fa-star{% if country.averageReview < 4.5 %}-o{% elif country.averageReview >= 4.5 and country.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                {% if country.averageReview == 0 %}
+                    <p><span class="card-text average-rating-index">No reviews yet</span></p>
+                {% else %}
+                <p><span class="card-text average-rating-index">{{ country.averageReview }} stars</span></p> 
+                {% endif %}
+                <p class="card-text dest-location">{{ country.location }}</p>
+                <p class="card-text dest-country">{{ country }}</p>
+            </div>
+        </div>  
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<br>
+
+{% else %}
+<h1>You forgot to search for a country...</h1>
+{%endif%}
+{% endblock %}
