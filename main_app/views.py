@@ -11,6 +11,8 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+import operator
+from functools import reduce
 # WEATHER
 
 # PAGINATION
@@ -44,7 +46,8 @@ def quiz(request):
 # DESTINATIONS INDEX
 def destinations_index(request):
     # print(request.POST)
-    if(request.POST['results']):
+    # if(request.POST['results']):
+    if request.method == 'POST':
         results = request.POST['results']
         print(results)
         resultsList = results.split()
@@ -52,29 +55,28 @@ def destinations_index(request):
         # for dest in resultsList:
         #     query = query + f'Q(keywords__contains={dest}.strip()) | '
         #     if 
-        i = 0
-        while i < len(resultsList):
-            if(i == len(resultsList) - 1):
-                query = query + 'Q(keywords__contains=' + ''' resultsList[i].strip() ''' + ')'
-            else:
-                query = query + 'Q(keywords__contains=' + ''' resultsList[i].strip() ''' + ') | '
-            i += 1
+        # i = 0
+        # while i < len(resultsList):
+        #     if(i == len(resultsList) - 1):
+        #         query = query + 'Q(keywords__contains=' + ''' resultsList[i].strip() ''' + ')'
+        #     else:
+        #         query = query + 'Q(keywords__contains=' + ''' resultsList[i].strip() ''' + ') | '
+        #     i += 1
         
         print(query)
         # countries = Destination.objects.filter(keywords__contains=resultsList[0].strip())
         # countries = Destination.objects.filter(query)
-        countries = Destination.objects.filter(Q(keywords__contains=resultsList[0].strip()) | Q(keywords__contains=resultsList[1].strip()) | Q(keywords__contains=resultsList[2].strip()) | Q(keywords__contains=resultsList[3].strip()))
+        # countries = Destination.objects.filter(Q(keywords__contains=resultsList[0].strip()) | Q(keywords__contains=resultsList[1].strip()) | Q(keywords__contains=resultsList[2].strip()) | Q(keywords__contains=resultsList[3].strip()))
+        countries = Destination.objects.filter(reduce(operator.and_, (Q(keywords__contains=x) for x in resultsList)))
         print(countries)
         return render(request, 'search.html', {'searched': results, 'countries': countries})
-        
-
-    destinations = Destination.objects.all()
+    else:
+        destinations = Destination.objects.all()
     # PAGINATION
-    p = Paginator(Destination.objects.all(), 15)
-    page = request.GET.get('page')
-    dest = p.get_page(page)
-
-    return render(request, 'destinations/index.html', {'dest': dest, 'destinations': destinations})
+        p = Paginator(Destination.objects.all(), 15)
+        page = request.GET.get('page')
+        dest = p.get_page(page)
+        return render(request, 'destinations/index.html', {'dest': dest, 'destinations': destinations})
 
 def search(request):
     if request.method == 'POST':
