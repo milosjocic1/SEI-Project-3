@@ -92,7 +92,7 @@ $(document).ready(function() {
         j += 2;
         k += 2;
     } else if (i == 3) {
-            text += keywords[k] + " ";
+            text = ",";
             $('#results').val(text);
             answerOne.fadeOut(1000);
             answerTwo.fadeOut(1000);
