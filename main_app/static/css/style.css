@@ -10,10 +10,12 @@ html {
 body {
     background-color: transparent;
     font-family: 'Manrope', sans-serif;
-    padding: 40px;
+    padding: 5px;
     height: 100%;
 }
-
+header {
+    padding: 20px;
+}
 .logo {
     font-size: 34px;
     font-weight: 800;
@@ -66,6 +68,7 @@ div.relative {
   position: relative;
   bottom: 550px;
   left: 145px;
+  width: 100px;
 }
 .show-me {
     text-align: center;
@@ -101,7 +104,7 @@ a:hover {
 }
 .text-field {
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100%;
     margin: 0 auto;
     margin-right: 20px;
@@ -120,12 +123,12 @@ a:hover {
     font-weight: 700;
 }
 .dest-image {
-    border-radius: 20px;
+    border-radius: 5px;
     height: 600px;
     padding-left: -20px;
 }
 .weather-div {
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: #ffffff57;
     padding: 30px 20px;
     padding-right: 50px;
@@ -140,12 +143,12 @@ a:hover {
 
 #map {
     height: 355px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .dest-details {
     background-color: white;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .dest-details-name {
     font-size: 40px;
@@ -172,7 +175,7 @@ a:hover {
 }
 .add-review-button {
     background-color: black;
-    border-radius: 15px;
+    border-radius: 5px;
     color: white;
     font-weight: 500;
     font-size: 22px; 
@@ -197,14 +200,14 @@ a:hover {
     height: 45px;
 }
 .account-img {
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .delete {
     display: inline-block !important;
     background-color: black;
     text-align: center;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 20px 40px;
     font-size: 22px;
 }
@@ -222,7 +225,7 @@ label {
     width: 100%;
     font-size: 22px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -242,7 +245,7 @@ label {
 .submit-button {
     background-color: black;
     padding: 20px 40px;
-    border-radius: 15px;
+    border-radius: 5px;
     color: white;
     font-weight: 500;
     border: none;
@@ -281,8 +284,6 @@ label {
     position: relative;
     bottom: 90px;
     left: 130px;
-    
-
 }
 .answer-div {
     position: relative;
@@ -378,7 +379,7 @@ footer {
     min-height: 800px;
 }
 .dev-photo {
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .dev-name {
     font-size: 34px;
@@ -398,8 +399,18 @@ footer {
     .home-title {
         font-size: 55px
     }
+    .home-subtitle {
+        font-size: 18px;
+    }
+    .page-title {
+        font-size: 35px;
+    }
+    .dest-details-name {
+        font-size: 28px;
+    }
     .answer {
         font-size: 22px;
+        left: 10px;
     }
     .quiz-question {
         font-size: 28px;
@@ -415,4 +426,17 @@ footer {
     .weather-div {
         margin-top: 20px !important;
     }
+    .body {
+        padding: 7px;
+    }
+    .html {
+        width: 100%;
+    }
+    .dest-image {
+        height: 350px;
+    }
+    .pagination {
+        font-size: 16px;
+    }
+
 }
