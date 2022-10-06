@@ -13,6 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 import operator
 from functools import reduce
+
 # WEATHER
 
 # PAGINATION
@@ -90,10 +91,10 @@ def search(request):
 
 # DESTINATIONS DETAIL:
 def destinations_detail(request, destination_id):
-    # SELECT * FROM main_app_cat WHERE id = cat_id
     destination = Destination.objects.get(id = destination_id)
     review_form = ReviewForm()
-    return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form })
+    
+    return render(request, 'destinations/detail.html', {'destination': destination, 'review_form': review_form } )
 
 @login_required
 def add_review(request, destination_id, user_id):
