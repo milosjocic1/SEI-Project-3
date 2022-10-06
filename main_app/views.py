@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 # WEATHER
 
 # PAGINATION
@@ -41,6 +42,31 @@ def quiz(request):
 
 # DESTINATIONS INDEX
 def destinations_index(request):
+    # print(request.POST)
+    if(request.POST['results']):
+        results = request.POST['results']
+        print(results)
+        resultsList = results.split()
+        query = ""
+        # for dest in resultsList:
+        #     query = query + f'Q(keywords__contains={dest}.strip()) | '
+        #     if 
+        i = 0
+        while i < len(resultsList):
+            if(i == len(resultsList) - 1):
+                query = query + 'Q(keywords__contains=' + ''' resultsList[i].strip() ''' + ')'
+            else:
+                query = query + 'Q(keywords__contains=' + ''' resultsList[i].strip() ''' + ') | '
+            i += 1
+        
+        print(query)
+        # countries = Destination.objects.filter(keywords__contains=resultsList[0].strip())
+        # countries = Destination.objects.filter(query)
+        countries = Destination.objects.filter(Q(keywords__contains=resultsList[0].strip()) | Q(keywords__contains=resultsList[1].strip()) | Q(keywords__contains=resultsList[2].strip()) | Q(keywords__contains=resultsList[3].strip()))
+        print(countries)
+        return render(request, 'search.html', {'searched': results, 'countries': countries})
+        
+
     destinations = Destination.objects.all()
     # PAGINATION
     p = Paginator(Destination.objects.all(), 15)
@@ -57,8 +83,6 @@ def search(request):
         return render(request, 'search.html', {'searched': searched, 'countries': countries})
     else:
         return render(request, 'search.html')
-
-
 
 
 # DESTINATIONS DETAIL:
