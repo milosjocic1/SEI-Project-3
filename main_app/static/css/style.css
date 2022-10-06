@@ -412,4 +412,7 @@ footer {
         bottom: 120px;
         left: 10px;
     }
+    .weather-div {
+        margin-top: 20px !important;
+    }
 }
