@@ -58,7 +58,7 @@
             
             {% for review in destination.review_set.all %}
                 <p class="review-title">{{ review.title }}</p>
-                <!-- STARS INSTEAD OF NUMBERS -->
+                <!-- STARS -->
                 <span class="show-ratings">
                     <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
                     <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
@@ -66,11 +66,11 @@
                     <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
                     <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
                 </span>
-                <p class="review-content">{{ review.content }}</p> <br><br>
-            <!-- WILL ADD USER PROFILE PIC AND NAME HERE -->
+                <p class="review-content">{{ review.content }}</p> <br>
+            
             <!-- PROFILE IMAGE AND USER -->
             {% load static %}
-            <div class="row m-1 mt-5">
+            <div class="row">
                 <div class="col">
                     <img class="profile-review-image" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" />  <span>Written by {{user.username}}</span>
                 </div>
