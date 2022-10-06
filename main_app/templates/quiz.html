@@ -12,7 +12,8 @@
         <div class="col answer-div">
             <div class="all-answers-div">
                 <a class="answer" id="answerOne" href="#">Answer 1</a><br>
-                <a class="answer" id="answerTwo" href="#">Answer 2</a>
+                <a class="answer" id="answerTwo" href="#">Answer 2</a><br>
+                <a class="answer" id="answerThree" href="#">Neither</a>
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                   <input type="hidden" id="results" value="" name="results">
