@@ -36,6 +36,7 @@ def about(request):
 
 # QUIZ PAGE
 def quiz(request):
+    
     return render(request, 'quiz.html')
 
 # DESTINATIONS INDEX
