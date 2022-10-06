@@ -269,7 +269,17 @@ label {
     font-size: 45px;
     color: white;
     padding: 20px 40px;
+}
+#quiz-button, #quiz-button:hover {
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 34px;
+    padding: 20px 40px;
+    position: relative;
+    bottom: 50px;
     
+
 }
 .answer-div {
     position: relative;
