@@ -29,6 +29,8 @@ answerOne.on("click", function() {
     j += 2;
     k += 2;
     if (i == 4) {
+        answerOne.fadeOut(1000);
+        answerTwo.fadeOut(1000);
         $('#quiz-button').prop("type", "submit");
     }
     console.log(text);
@@ -49,6 +51,8 @@ answerTwo.on("click", function() {
     j += 2;
     k += 2;
     if (i == 4) {
+        answerOne.fadeOut(1000);
+        answerTwo.fadeOut(1000);
         $('#quiz-button').prop("type", "submit");
     }
     console.log(text);
