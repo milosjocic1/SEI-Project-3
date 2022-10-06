@@ -69,16 +69,17 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+   
 
 
     
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
     avatar = models.ImageField(default='default.jpg', upload_to='main_app/static/profile_images')
     bio = models.TextField()
+    
 
     def __str__(self):
-        return self.user.username
+        return f"{self.get_review_display()} on {self.user.username}"
 
 
