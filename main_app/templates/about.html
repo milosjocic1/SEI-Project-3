@@ -1,8 +1,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>About</h1>
+{% load static %}
+  <div class="page about-us">
+    <h1 class="page-title"> About us </h1>
+    <p class="home-subtitle">
+        Our developers are Full Stack Software Engineers. 
+    </p>
+    <div class="row m-1 mt-5 dest-details">
+        <div class="col col-lg-3">
+            <img class="dev-photo" src="/static/images/sasha.jpeg" alt="" width="200px">
+        </div>
+        <div class="col col-lg-9">
+            <p class="dev-name">Alexander Ward (Sasha)</p>
+            <p class="dev-description">Full Stack Engineer</p>
+            <p class="dev-text">I helped build this website. PLEASE USE IT FFS.</p>
+            <p class="dev-text">Check out <a href="#"><strong>My Github</strong></a></p>
+        </div>
+    </div>
+    <div class="row m-1 mt-5 dest-details">
+        <div class="col col-lg-3">
+            <img class="dev-photo" src="/static/images/CBoden1.png" alt="" width="200px">
+        </div>
+        <div class="col col-lg-9">
+            <p class="dev-name">Claudia Eiko</p>
+            <p class="dev-description">Full Stack Engineer</p>
+            <p class="dev-text">I helped build this website. PLEASE USE IT FFS.</p>
+            <p class="dev-text">Check out <a href="#"><strong>My Github</strong></a></p>
+        </div>
+    </div>
+    <div class="row m-1 mt-5 dest-details">
+        <div class="col col-lg-3">
+            <img class="dev-photo" src="/static/images/sasha.jpeg" alt="" width="200px">
+        </div>
+        <div class="col col-lg-9">
+            <p class="dev-name">Milos Jocic</p>
+            <p class="dev-description">Full Stack Engineer</p>
+            <p class="dev-text">I helped build this website. PLEASE USE IT FFS.</p>
+            <p class="dev-text">Check out <a href="#"><strong>My Github</strong></a></p>
+        </div>
+    </div>
+  </div>
 
 {% endblock %}
 

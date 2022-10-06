@@ -359,3 +359,22 @@ footer {
     text-decoration: none;
     color: black;
 }
+
+/* ABOUT US */
+.about-us {
+    min-height: 800px;
+}
+.dev-photo {
+    border-radius: 20px;
+}
+.dev-name {
+    font-size: 34px;
+    font-weight: 600;
+}
+.dev-description {
+    font-size: 22px;
+    font-weight: 600;
+}
+.dev-text {
+    font-size: 22px;
+}
