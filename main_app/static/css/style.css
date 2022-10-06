@@ -251,7 +251,8 @@ label {
 
 .question-div {
     align-items: center;
-    background-image: url("https://cdn.wallpapersafari.com/33/32/ekgu4L.jpg");
+    background-image: url("https://www.bethanyschool.org.uk/wp-content/uploads/2018/01/ged-horizon-pic3.jpg");
+    background-size: cover;
 }
 .quiz-row {
     height: 600px;
@@ -264,9 +265,10 @@ label {
 .quiz-question {
     margin: 0 auto;
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     font-size: 45px;
+    font-weight: 800;
     color: white;
     padding: 20px 40px;
 }
