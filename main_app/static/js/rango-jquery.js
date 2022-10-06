@@ -1,7 +1,7 @@
 $(document).ready(function() {
 $('#quiz-button').hide();    
 let questionsToAsk = ["Which is your happy place?", "Do you like it hot - or not?", "Do you love romance or long for adventure?", "Are you a culture vulture or do you love to explore?"];
-let answers = ["The countryside", "The city", "Sandy beaches", "Snowy landscapes", "Going on safari", "Croissants in Paris", "Bring me the horizon", "Give me history"];
+let answers = ["The countryside", "The city", "Sandy beaches", "Snowy landscapes", "Going on safari", "Croissants in Paris", "Bring me the horizon", "Give me culture"];
 let keywords = ["nature", "city", "summer", "winter", "adventure", "romantic", "exotic", "culture"];
 let text = "";
 let i = 0;
