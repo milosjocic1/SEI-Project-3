@@ -50,7 +50,6 @@ answerTwo.on("click", function() {
     j += 2;
     k += 2;
     console.log(text);
-    redirect(text);
 });
 
 });
