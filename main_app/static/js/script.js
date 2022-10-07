@@ -2,7 +2,7 @@ console.log("Sashinha e Milinhos são muito legais")
 
 // WEATHER API
 function info() {
-    let apiKey = "4507d2adf227d493c972d484873cbd39";
+    let apiKey = "02b0e8be55f7e16deac161d58d733f1f";
     let unit = "metric";
     let city = document.getElementById("city");
     city = city.innerText;
