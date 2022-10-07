@@ -72,7 +72,7 @@
             {% load static %}
             <div class="row">
                 <div class="col">
-                    <img class="profile-review-image" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" />  <span>Written by {{user.username}}</span>
+                    <img class="profile-review-image" src="{% static user.profile.avatar.url|cut:'main_app/static/' %}" alt="" />  <span>Written by {{review.user.username}}</span>
                 </div>
             </div>
             <p class="review-created">Reviewed on {{ review.created_at }}</p> 
