@@ -1,4 +1,4 @@
-# Project 3 - Django Dhjourneys
+# Project 3 - Django Djourneys
 
 ## Description
 
