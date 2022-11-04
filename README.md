@@ -2,7 +2,7 @@
 
 ## Description
 
-This project was assigned at the end of the eighth week of General Assembly’s 3-month SEI (Software Engineering Immersive) course, which teaches people who don't how to code the basics of software engineering with a view to launching a career in the tech sector. The aim of this project was to design an app in Python using the Django framework over the course of one week. This project was a group project together with two other students on the course.
+This project was assigned at the end of the eighth week of General Assembly’s 3-month SEI (Software Engineering Immersive) course, which teaches people who don't know how to code the basics of software engineering with a view to launching a career in the tech sector. The aim of this project was to design an app in Python using the Django framework over the course of one week. This project was a group project together with two other students on the course.
 
 ## Deployment link
 
@@ -40,10 +40,10 @@ Our brief for this project was to build an app from scratch in Python as a team 
 
 Some of the possible stretch goals we could achieved included:
 
-- Allow user to change website theme, Dark mode etc.
+- Allow users to change website theme, Dark mode etc.
 - Include Pagination
 - Utilise 3rd party APIs
-- Send verification email upon registeration
+- Send verification email upon registration
 - Allow users to upload image files
 - Password reset using an email
 
@@ -76,7 +76,7 @@ As team leader, I worked with my teammates to come up with a clear development p
 
 ### Team leadership  
 
-Speaking to the team, we agreed that I would be team leader and handle management of the project and development flow. As in previous projects, we collabroated to set out a clear development overview that would allow us to remain accountable, on target and achieve our goals for this app. We established minimum deliverable functionalities as well as stretch goals, and as the project progressed, I ensured that we all stuck to these as a team. Wherever issues arose, we worked ogether to resolve these and I periodically checked in with my teammates to see if they needed help, feedback or support with bugs. We used Zoom and Slack to stay in constant communication throughout the project.
+Speaking to the team, we agreed that I would be team leader and handle management of the project and development flow. As in previous projects, we collaborated to set out a clear development overview that would allow us to remain accountable, on target and achieve our goals for this app. We established minimum deliverable functionalities as well as stretch goals, and as the project progressed, I ensured that we all stuck to these as a team. Wherever issues arose, we worked together to resolve these and I periodically checked in with my teammates to see if they needed help, feedback or support with bugs. We used Zoom and Slack to stay in constant communication throughout the project.
 
 ### Task management  
 
@@ -100,7 +100,7 @@ My team were all quite ready for a holiday and taking inspiration from the perfu
 
 #### ERD
 
-We started by drawing up an ERD to map out the the relations between all of our models and functionalities.
+We started by drawing up an ERD to map out the relations between all of our models and functionalities.
 
 ![ERD](https://media.git.generalassemb.ly/user/44781/files/69120fdf-0cc4-4d7c-a748-4e32f7fdea1c)
 
@@ -214,7 +214,7 @@ I wrote the quiz function - the main element of our site - using jQuery. The qui
 
 ## Key Learnings & Takeaways
 
-This project taught me that working in a team can be fun and seamless when you establish your criteria and process clearly from the outset. We worked so well as a team that or communication was always effortless, productive and led to us resolving issues collaboratively in a very short time. Although I personally prefer JavaScript, I learned that I can do a lot with Python, and this project gave me a much better understanding of the language. I feel more confident using Python after implementing it on this project.
+This project taught me that working in a team can be fun and seamless when you establish your criteria and process clearly from the outset. We worked so well as a team that our communication was always effortless, productive and led to us resolving issues collaboratively in a very short time. Although I personally prefer JavaScript, I learned that I can do a lot with Python, and this project gave me a much better understanding of the language. I feel more confident using Python after implementing it on this project.
 
 ## Bugs
 
