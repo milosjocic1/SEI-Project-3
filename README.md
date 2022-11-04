@@ -201,24 +201,14 @@ My favourite function above all has to be the quiz function - the main element o
 
 ![Screenshot 2022-11-04 at 13 42 33](https://media.git.generalassemb.ly/user/44781/files/653ab9e4-b22c-44b5-97b7-38b16dcfc5c5)
 
-#### Destination Quiz (rango-query.js)
-
-#### Leaderboard sorting
-
-This code sorts the cats in descending order of average rating. Since this was early on in my development as an engineer, it felt like a hard task at the time, but now seems so easy by comparison!
-
-![Screenshot 2022-11-02 at 16 36 13](https://media.git.generalassemb.ly/user/44781/files/79e6328c-5a12-4321-9f92-9cbe5f5e14cb)
-
 ## Key Learnings & Takeaways
 
-This project taught me that communication between team members really is key to the success of a group project. In order to resolve issues promptly, it is essential to keep talking to the others on the team about what you're doing, when you're doing it, the issues you encounter along the way, and most importantly - to ask for help! It's also extremely important to ensure that if you're working in the same files, you tell each other what you're doing, and if necessary, create a separate branch on your local repo to work on individual updates and functionalities/features, then merge this into your development branch before pushing and opening a pull request. This avoids conflicts in the main development branch and potential merge issues, something we dealt with a lot in the early stages.
-
-I also learned that I actually enjoy managing a (smnall) team of devs and handling management of a project! It was strange at first, but having been my own boss for a decade and having to manage translation projects - some of them quite large and working with up to 10 other translators - I found my skills readily transferred across to software engineering and the development process went well as a result.
+This project taught me that working in a team can be fun and seamless when you establish your criteria and process clearly from the oputset. We worked so well as a team that or communication was always effortless, productive and led to us resolving issues collaboratively in a very short time. Although I personally prefer JavaScript, I learned that I can do a lot with Python, and this project gave me a much better understanding of the language. I feel more confident using Python after implementing it on this project.
 
 ## Bugs
 
-At present the only bug is that our user information table does not fit neatly in the main body on mobile, but spills over.
+Our site currently has no bugs.
 
 ## Future Improvements
 
-In future iterations of Rate My Cat, I would want to add the location functionality so users can view cats in their area or another location, along with the average rating for the cats. This would be displayed on a map which users can search.
+In future versions of Django Djourneys, I would want to allow users to be able to add destinations - subject to approval by an administrator. These would require checking to ensure multiple versions of the same destination do not get added to the database. I would also add in forwarding to e.g. Skyscanner to allow users to check and book flights to the destination of their choice.
