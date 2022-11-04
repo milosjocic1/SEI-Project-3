@@ -207,7 +207,7 @@ This project taught me that working in a team can be fun and seamless when you e
 
 ## Bugs
 
-Our site currently has no bugs.
+Heroku periodically deletes images, so some images such as profile photos will not display properly. This could be rectified by using Cloudinary for image sotrage rather than using Multer.
 
 ## Future Improvements
 
