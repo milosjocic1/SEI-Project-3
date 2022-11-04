@@ -146,7 +146,7 @@ We got together as a team to define the basic requirements for our site. We want
 
 After we established the main functionalities we wanted from our app, we began working on the basic layout. We wanted the user to be greeted by a welcome page, with links to an About Us page, a joke Disclaimer page, and a page with a little bit more info about us and the project.
 
-![Screenshot 2022-11-02 at 15 20 20](https://media.git.generalassemb.ly/user/44781/files/f17a8578-5c0d-479f-b369-d21662af77bf)
+![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
 
 ### Stage 7: Structuring logic and working on functions  
 
@@ -160,12 +160,13 @@ We tested functions repeatedly as we went along and got each other to test these
 
 We went through several iterations of our website, building on the style as we went, before we settled on the final version. We decided to go for a look that was fun and friendly - we're talking about rating cat pictures after all! - that would be welcoming to the user. We experienced a lot of issues with conflicting CSS rules in order to get the website mobile responsive, and managed to resolve all of our conflicts here just in time for presentation. Future iterations would make more use of media queries in order to avoid any conflicts when swtiching between computer and mobile.
 
-![Screenshot 2022-11-02 at 16 04 22](https://media.git.generalassemb.ly/user/44781/files/68a5eee4-722f-4369-9b31-6faa5a3b24df)
-
+![Screenshot 2022-11-04 at 13 40 17](https://media.git.generalassemb.ly/user/44781/files/c61d0b1e-8965-401e-b3af-7a8081f9cd3e)
 
 ### Stage 10: Testing the site  
 
 With our site finished, we made sure to through each page and function to make sure everything worked well. We had enough time before delivery toi be able to do this, and it meant we were able to fix slight issues in e.g. the way elements displayed or functions affected elements on the page.
+
+![Screenshot 2022-11-04 at 13 41 37](https://media.git.generalassemb.ly/user/44781/files/148b7553-02d5-4f75-b102-8b532450e3be)
 
 ### Stage 11: Bonus features  
 
@@ -181,17 +182,23 @@ When it came to solving issues, I was proactive in identifying and helping with 
 
 ## Wins
 
-The biggest win for me was the fact that our project was finished, fully styled and ready to go on presentation day. Thanks to sticking to a proper development schedule and propmt bug/error detection and resolution, we were able to present our project on presentation day without any real issues! I'm also very happy that our app is almost entirely mobile responsive.
+The fact that our project is fully responsive is a big win:
 
-<img src="https://media.git.generalassemb.ly/user/44781/files/8c90c251-2768-45ec-8479-d290cf5f198d" width="300" height="600" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/6269cc84-9ca8-4fc3-b93f-f0207ac7f148" width="300" height="600" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/f5e03ae1-bb6e-45d5-8db9-f10430cc78b1" width="300" height="600" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/443edb29-3c53-4cc2-a6cc-ba4c7c88c4eb" width="300" height="600" />
 
 ### Favourite functions
 
-#### Cat POST API
+#### Destination Quiz (rango-query.js)
 
-This function, which posts an instance of a cat, includes the average rating for the individual cat. It took some trial and error to get the average rating just right. Initially I thought I would create an empty array to store each rating as it was made by the respective user, and then realised I could simplify the function. If no rating has yet been submitted for the cat in question, the first rating is pushed to the instance. If a rating already exists, the new rating is simply add to the existing value, which is then divided by 2 to provide an average, which is then returned.
+My favourite function above all has to be the quiz function - the main element of our site - which I wrote using jQuery. The quiz is actually structured as a form with a hidden input tag that contains an empty value attribute. The quiz itself is composed of a series of four questions. The user has three options per round, one of which is entirely neutral. With each answer they click, a specific keyword is pushed to this empty value attribute, or no keyword if their answer is neutral. When the user then clicks on the "Find my holiday!" button at the end of the quiz, the string stored in the value attribute is then used as a "profile" to search the database of destinations and return a list of destinations. Each destination in our database has a specific combination of keywords, meaning that only those destinations containing these keywords will be returned and made visible to the user, i.e. destinations matching their profile. jQuery is used to update the value attribute with each question answered, to make use of delay times and fade-out functionalities, thus providing a great experience for the person taking the quiz!
 
-![Screenshot 2022-11-02 at 16 31 14](https://media.git.generalassemb.ly/user/44781/files/32864231-966d-47fd-847e-dcad30571882)
+![Screenshot 2022-11-04 at 13 46 00](https://media.git.generalassemb.ly/user/44781/files/7906422e-ec6f-46a0-bbbf-a999d47e2280)
+
+![Screenshot 2022-11-04 at 13 42 33](https://media.git.generalassemb.ly/user/44781/files/653ab9e4-b22c-44b5-97b7-38b16dcfc5c5)
+
+#### Destination Quiz (rango-query.js)
 
 #### Leaderboard sorting
 
