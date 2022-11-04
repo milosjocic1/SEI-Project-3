@@ -185,9 +185,9 @@ When it came to solving issues, I was proactive in identifying and helping with 
 The fact that our project is fully responsive is a big win:
 
 <p float="left>
-<img src="https://media.git.generalassemb.ly/user/44781/files/f5e03ae1-bb6e-45d5-8db9-f10430cc78b1" width="300" height="600" />
-<img src="https://media.git.generalassemb.ly/user/44781/files/443edb29-3c53-4cc2-a6cc-ba4c7c88c4eb" width="300" height="600" />
-<img src="https://media.git.generalassemb.ly/user/44781/files/6269cc84-9ca8-4fc3-b93f-f0207ac7f148" width="300" height="600" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/f5e03ae1-bb6e-45d5-8db9-f10430cc78b1" width="250" height="500" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/443edb29-3c53-4cc2-a6cc-ba4c7c88c4eb" width="250" height="500" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/6269cc84-9ca8-4fc3-b93f-f0207ac7f148" width="250" height="500" />
                                                                                                                             </p>
                                                                                                                             
 ### Favourite functions
