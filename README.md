@@ -2,22 +2,23 @@
 
 ## Description
 
-This project was assigned at the end of the eighth week of General Assembly’s 3-month SEI (Software Engineering Immersive) course, which teaches people who don't how to code the basics of software engineering with a view to launching a career in the tech sector. The aim of this project was to design an app in Python using the Django framework over the course of one week. This project was a group project together with two other studfents on the course.
+This project was assigned at the end of the eighth week of General Assembly’s 3-month SEI (Software Engineering Immersive) course, which teaches people who don't how to code the basics of software engineering with a view to launching a career in the tech sector. The aim of this project was to design an app in Python using the Django framework over the course of one week. This project was a group project together with two other students on the course.
 
 ## Deployment link
 
 [You can find Django Djourneys deployed on this link](https://https://djangodjourney.herokuapp.com/). Take the quiz and see where your next journey should take you!
 
-
 ## Getting Started/Code Installation
 
 ### Instructions
 
-There are no specific installation requirements for this app. Simply create an account or take our four-part quiz to get started!
+#### Deployed app
+
+There are no specific installation requirements for this app since Django Djourneys runs in the browser. Simply create an account or take our four-part quiz to get started!
 
 ## Timeframe & Working Team
 
-We had a week to complete this project, and worked plenty of hours over the weekend and during the week to present the perfect app. Our brief stipulated that wer had to build an app as a group, so I joined up with two others from my course, once again acting as team leader to manage the project.
+We worked as a team of three over the course of a week to deliver this project. We split tasks equally to ensure we were all contributing to the project at the same level. We were an especially effective team on this project! I took the lead to manage the project and track tasks to ensure we remain on target for delivery.
 
 ## Technologies Used
 
@@ -25,41 +26,41 @@ We built this project in Python and HTML within the Django framework, with CSS f
 
 ## Brief
 
-Our brief for this project was to build an app from scratch in Python as a team using the Django framework, and then to deploy this on Heroku. Users of the app had to:
+Our brief for this project was to build an app from scratch in Python as a team using the Django framework, and then to deploy this on Heroku. Our criteria were as follows:
 
-- Be able to sign up, sign in and sign out
-- Have a profile
-- Be able to edit their profile
-- Be able to change their password
+- Create the application using at least 2 related models, one of which should be a user
+- Manage team contributions and collaboration using a standard Git flow on GitHub
+- Include all major CRUD functions for at least one of your models
+- Add authentication AND authorization (page protection) to restrict access to appropriate users
+-   User must be able to sign up or login
+-   Signed in user must be able to change password and logout
+-   change password and logout must only be available to logged in users
+- Layout and style your front-end with clean & well-formatted CSS, with or without a framework
+- Deploy your application online so it's publicly accessible
 
-We were also given extra criteria we could achieve, of which we had to pick a minimum of two to implement in our app:
+Some of the possible stretch goals we could achieved included:
 
-- User must be able to create a resource
-- User must be able to edit a resource
-- User must be able to view all resources they created
-- User must be able to view a single resource they created
-- User must not be able to edit or delete other users' resources
+- Allow user to change website theme, Dark mode etc.
+- Include Pagination
+- Utilise 3rd party APIs
+- Send verification email upon registeration
+- Allow users to upload image files
+- Password reset using an email
 
-Stretch goals included:
-
-- Making the app responsive
-- Using a CSS library such as Bootstrap
-- Adding extra resources
-- Adding image upload functionality
-
-At the end of the project we had to present a presentation on our project covering the following points:
+At the end of the project we had to present our project while covering the points below:
 
 - What is the app about?
-- What were the individual team members' contributions to the project?
-- What was the most difficult part of the project to work on?
+- How does your app work?
+- What bits of code are you most proud of?
 - What was your favourite part to work on?
+- What issues did you encounter?
 - What would you add next?
 
 ## Planning  
 
 ### Development Overview  
 
-Together with my teammates, I built on the lessons from my first project to establish the following development process. This gave us a clear structure we could work within as we began building our project:
+As team leader, I worked with my teammates to come up with a clear development process that we could follow and track our progress over the course of project:
 
 1. Brainstorm
 2. Pick an idea
@@ -89,39 +90,41 @@ Documented below are the stages we went through in order to build the code for o
 
 ### Stage 1: Brainstorming  
 
-We had an initial brainstorming session as a team, coming up with various ideas for our app. We quickly settled on the idea of an app where users could upload images of cats and have these rated by other users. Users would also be able to rate other people's cats, and there would be also be a leaderboard showing the most popular/highest rated cats.
+We started by brainstorming ideas for our app. Initial ideas included a World Cup 2022 match fixture tracker, a sports venue booking system and one or two other ideas related to sporting events. After some initial research, we decided to rule these out and went with our final, very appealing idea.
 
 ### Stage 2: Pick an idea  
 
-We chose our idea very quickly - who doesn't love cats? Dog people, that's who! - and armed with a solid idea, we began developing the wirefreames, ERDs and user stories for our app, which we had decided to name simply Rate My Cat.
+My team were all quite ready for a holiday and yaking inspiration from the perfume brand Penhaligon's website, where users can take a test to build a "fragrance profile" and be matched to the best fragrances for them, we thought: "Wouldn't it be great if you could have an app that tells you what your next holiday destination should be?". The idea struck a chord with all of us and we decided to build a quiz that users can take to be matched to a list of potential holiday destinations.
 
 ### Stage 3: Wireframe, ERD and user stories  
 
 #### ERD
 
-We began with an ERD to map the relations between our models. You can find the link to our ERD [here](https://git.generalassemb.ly/alex-sasha-ward/RateMyCat/blob/a3ae43f2f5e76c60127c7b5af1a83c0d83f1be7f/ERDs/RateMyCat%20ERD%20Final.pdf).
+We began with an ERD to map the relations between our models.![ERD](https://media.git.generalassemb.ly/user/44781/files/55fa7e93-19d9-4dfb-b55b-47b5267fdbeb)
 
 #### Wireframes
 
-We then began working on wireframes to visualise how our site would look page by page. You can find the link to our wireframes [here](https://git.generalassemb.ly/alex-sasha-ward/RateMyCat/blob/8c10dd626513ff39705da146a9542ff4496579a5/Wireframe.png)
+We then began working on wireframes to visualise how our site would look page by page.
+![image](https://media.git.generalassemb.ly/user/44781/files/b74fb9d7-4015-44e2-a1ff-7e5db2c2a89b)
+![image (1)](https://media.git.generalassemb.ly/user/44781/files/f34d814c-8202-4982-a4c3-3d3be94fb3e6)
+![image (2)](https://media.git.generalassemb.ly/user/44781/files/4d5d79f6-4512-4ffa-bba8-0dcdb1788710)
+![image (3)](https://media.git.generalassemb.ly/user/44781/files/c1177570-61e3-47c5-be71-fbfad99c0b06)
 
 #### User Stories
 
 We took time to think about the features and functionalities we wanted our users to have, and set out the following user stories:
 
 - As an unregistered user, I want a function to sign up to the site  
-- As an unregistered user, I want a quick rundown of the site’s purpose  
+- As an unregistered user, I want to know what the site is about  
 - As a registered user, I want to be able to create a profile  
-- As a registered user, I want to be able to create a profile of my cat  
-- As a user of the site, I want to be able to see other users’ cats  
-- As a user, I want to be able to rate other cats 
-- As a user, I want to be able to edit my cat’s profile  
-- As a user, I want to be able to see which cats are most popular  
-- As a user, I want to be able to log in/out of my account  
-- BONUS: As a user, I want to be able to comment on other cats  
+- As a user of the site, I want to be able to see a list of destinations  
+- As a user, I want to be able to see details about those destinations
+- As a user, I want to be able to edit my profile  
+- As a user, I want to be able to take the quiz 
+- As a user, I want to be able to see my quiz results and the destinations they match up with
+- BONUS: As a registered user, I want to be able to leave reviews   
 - BONUS: As a user, I want to learn about the creators of the site  
-- BONUS: As a user, I want to see cats in other locations  
-- BONUS: As a user, I want to see who other users are  
+- BONUS: As a user, I want to add my own destinations    
 
 ### Stage 4: Creating Git repo and starting files  
 
