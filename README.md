@@ -1,3 +1,5 @@
+![IMG_2587](https://media.git.generalassemb.ly/user/44781/files/24461d76-de3f-4b87-bb7d-d089ae852a46)
+![IMG_2587](https://media.git.generalassemb.ly/user/44781/files/22f223c0-eda3-4bea-86b6-9c34ac12366a)
 # Project 3 - Django Djourneys
 
 ## Description
