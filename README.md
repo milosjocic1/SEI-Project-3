@@ -1,5 +1,3 @@
-![IMG_2587](https://media.git.generalassemb.ly/user/44781/files/24461d76-de3f-4b87-bb7d-d089ae852a46)
-![IMG_2587](https://media.git.generalassemb.ly/user/44781/files/22f223c0-eda3-4bea-86b6-9c34ac12366a)
 # Project 3 - Django Djourneys
 
 ## Description
@@ -188,6 +186,7 @@ The fact that our project is fully responsive is a big win:
 
 <p float="left>
 <img src="https://media.git.generalassemb.ly/user/44781/files/f5e03ae1-bb6e-45d5-8db9-f10430cc78b1" width="250" height="500" />
+<img src="https://media.git.generalassemb.ly/user/44781/files/22f223c0-eda3-4bea-86b6-9c34ac12366a" width="250" height="500" />
 <img src="https://media.git.generalassemb.ly/user/44781/files/443edb29-3c53-4cc2-a6cc-ba4c7c88c4eb" width="250" height="500" />
 <img src="https://media.git.generalassemb.ly/user/44781/files/6269cc84-9ca8-4fc3-b93f-f0207ac7f148" width="250" height="500" />
 </p>
