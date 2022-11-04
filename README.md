@@ -76,7 +76,7 @@ As team leader, I worked with my teammates to come up with a clear development p
 
 ### Team leadership  
 
-Speaking to the team, we agreed hat I would be team leader anbd handle management of the project and development flow. As in previous projects, we collabroated to set out a clear development overview that would allow us to remain accountable, on target and achieve our goals for this app. We established minimum deliverable functionalities as well as stretch goals, and as the project progressed, I ensured that we all stuck to these as a team. Wherever issues arose, we worked ogether to resolve these and I periodically checked in with my teammates to see if they needed help, feedback or support with bugs. We used Zoom and Slack to stay in constant communication throughout the project.
+Speaking to the team, we agreed that I would be team leader and handle management of the project and development flow. As in previous projects, we collabroated to set out a clear development overview that would allow us to remain accountable, on target and achieve our goals for this app. We established minimum deliverable functionalities as well as stretch goals, and as the project progressed, I ensured that we all stuck to these as a team. Wherever issues arose, we worked ogether to resolve these and I periodically checked in with my teammates to see if they needed help, feedback or support with bugs. We used Zoom and Slack to stay in constant communication throughout the project.
 
 ### Task management  
 
@@ -194,9 +194,19 @@ I'm also very happy that with just a week or so of Python under our belts, we we
                                                                                                                             
 ### Favourite functions
 
+#### User signup & profile creation
+
+The trick on this project was to allow the user to sign up and simultaneously create a profile for the user. Creating the user account was simple enough wiht the use of a signup API that captured the information entered as a POST request and created an instance of User, subsequently saving this and redirecting the user to the index page:
+
+![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
+
+I then set two signals that would cause two additional functions to be triggered on the creation of an instance of User. This would create an instance of Profile, which would store information about the user that would then be displayed when they log into the website. This is based on the instance of User that has just been created, and was tricky to get working!
+
+![Screenshot 2022-11-04 at 16 02 35](https://media.git.generalassemb.ly/user/44781/files/24ee6053-5e0c-46b9-88b9-0cde729c38ca)
+
 #### Destination Quiz (rango-query.js)
 
-My favourite function above all has to be the quiz function - the main element of our site - which I wrote using jQuery. The quiz is actually structured as a form with a hidden input tag that contains an empty value attribute. The quiz itself is composed of a series of four questions. The user has three options per round, one of which is entirely neutral. With each answer they click, a specific keyword is pushed to this empty value attribute, or no keyword if their answer is neutral. When the user then clicks on the "Find my holiday!" button at the end of the quiz, the string stored in the value attribute is then used as a "profile" to search the database of destinations and return a list of destinations. Each destination in our database has a specific combination of keywords, meaning that only those destinations containing these keywords will be returned and made visible to the user, i.e. destinations matching their profile. jQuery is used to update the value attribute with each question answered, to make use of delay times and fade-out functionalities, thus providing a great experience for the person taking the quiz!
+I wrote the quiz function - the main element of our site - using jQuery. The quiz is actually structured as a form with a hidden input tag that contains an empty value attribute. The quiz itself is composed of a series of four questions. The user has three options per round, one of which is entirely neutral. With each answer they click, a specific keyword is pushed to this empty value attribute, or no keyword if their answer is neutral. When the user then clicks on the "Find my holiday!" button at the end of the quiz, the string stored in the value attribute is then used as a "profile" to search the database of destinations and return a list of destinations. Each destination in our database has a specific combination of keywords, meaning that only those destinations containing these keywords will be returned and made visible to the user, i.e. destinations matching their profile. jQuery is used to update the value attribute with each question answered, to make use of delay times and fade-out functionalities, thus providing a great experience for the person taking the quiz!
 
 ![Screenshot 2022-11-04 at 13 46 00](https://media.git.generalassemb.ly/user/44781/files/7906422e-ec6f-46a0-bbbf-a999d47e2280)
 
