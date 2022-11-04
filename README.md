@@ -18,7 +18,7 @@ There are no specific installation requirements for this app since Django Djourn
 
 ## Timeframe & Working Team
 
-We worked as a team of three over the course of a week to deliver this project. We split tasks equally to ensure we were all contributing to the project at the same level. We were an especially effective team on this project! I took the lead to manage the project and track tasks to ensure we remain on target for delivery.
+We worked as a team of three over the course of a week to deliver this project. We split tasks equally to ensure we were all contributing to the project at the same level. We were an especially effective team on this project! I took the lead to manage the project and track tasks to ensure we remained on target for delivery.
 
 ## Technologies Used
 
@@ -80,9 +80,9 @@ We agreed as a team that I would take the role of team leader, so I made sure fr
 
 ### Task management  
 
-In order to create, assign and manage tasks, I created a public Trello board which all of the members of our group could access. This made working on our project much easier and allowed us to work more effectively as a group. We reviewed the Trello board each day to assign tasks, mark them as completed and create any additional tasks as required to keep track of these. You can find the link to our Trello board [here](https://trello.com/b/BjeZaJ0E/rate-my-cat).
+In order to create, assign and manage tasks, I created a public Trello board which all of the members of our group could access. This made working on our project much easier and allowed us to work more effectively as a group. We reviewed the Trello board each day to assign tasks, mark them as completed and create any additional tasks as required to keep track of these. You can find the link to our Trello board [here](https://trello.com/b/OvjiXE35/project3-django-djourney).
 
-![Screenshot 2022-09-09 at 12 46 53](https://media.git.generalassemb.ly/user/44781/files/518d6b93-92a0-493b-8d0a-33add6ebed95)
+![Screenshot 2022-11-04 at 14 44 05](https://media.git.generalassemb.ly/user/44781/files/30dd4f83-d60d-4f03-9d8c-c330f6087327)
 
 ## Build/Code Process
 
@@ -94,17 +94,19 @@ We started by brainstorming ideas for our app. Initial ideas included a World Cu
 
 ### Stage 2: Pick an idea  
 
-My team were all quite ready for a holiday and yaking inspiration from the perfume brand Penhaligon's website, where users can take a test to build a "fragrance profile" and be matched to the best fragrances for them, we thought: "Wouldn't it be great if you could have an app that tells you what your next holiday destination should be?". The idea struck a chord with all of us and we decided to build a quiz that users can take to be matched to a list of potential holiday destinations.
+My team were all quite ready for a holiday and taking inspiration from the perfume brand Penhaligon's website, where users can take a test to build a "fragrance profile" and be matched to the best fragrances for them, we thought: "Wouldn't it be great if you could have an app that tells you what your next holiday destination should be?". The idea struck a chord with all of us and we decided to build a quiz that users can take to be matched to a list of potential holiday destinations.
 
 ### Stage 3: Wireframe, ERD and user stories  
 
 #### ERD
 
-We began with an ERD to map the relations between our models.![ERD](https://media.git.generalassemb.ly/user/44781/files/55fa7e93-19d9-4dfb-b55b-47b5267fdbeb)
+We started by drawing up an ERD to map out the the relations between all of our models and functionalities.
+
+![ERD](https://media.git.generalassemb.ly/user/44781/files/69120fdf-0cc4-4d7c-a748-4e32f7fdea1c)
 
 #### Wireframes
 
-We then began working on wireframes to visualise how our site would look page by page.
+We then got to work on wireframing our site page by page.
 ![image](https://media.git.generalassemb.ly/user/44781/files/b74fb9d7-4015-44e2-a1ff-7e5db2c2a89b)
 ![image (1)](https://media.git.generalassemb.ly/user/44781/files/f34d814c-8202-4982-a4c3-3d3be94fb3e6)
 ![image (2)](https://media.git.generalassemb.ly/user/44781/files/4d5d79f6-4512-4ffa-bba8-0dcdb1788710)
@@ -126,25 +128,23 @@ We took time to think about the features and functionalities we wanted our users
 - BONUS: As a user, I want to learn about the creators of the site  
 - BONUS: As a user, I want to add my own destinations    
 
-### Stage 4: Creating Git repo and starting files  
+### Stage 4: Creating GitHub repo and starting files  
 
-As team leader, I took charge of initial file and folder setup, first creating a repo on Git for our project, then laying out the basic file and folder structure for our models, controllers, routes and views. I also created the database which would store our information on mongoDB.
+Since I was the team leader on this project, I created a repo on GitHub and set up the initial file structure so that we could begin working. I communicated constantly with my team to make sure that we were always working in the dev branch, and helping them to resolve any issues with migrations, merges, etc. We experienced relatively few issues with conflicts during merges as a result and development ran more or less smoothly.
 
 ### Stage 5: Requirements  
 
-We got together as a team to define the basic requirements for our site. We wanted the user to:
+We defined our basic requirements at the outset:
 
-- be able to create an account where they could upload an image of their cat and then
-- submit this to be rated by other users
-- have a leaderboard of the most popular cats
-- with an average rating taken from the sum of all of their previous ratings
-- show cats by location
-- have the functionality to delete a cat
-- or add a cat/change their cat
+- Users should be greeted by a welcome page explaining the site and the quiz
+- Users should have the option to take the quiz, or skip straight to a list of all destinations
+- Users should be able to create an account
+- Users should be able to see details on individual destinations
+- Users should be able to leave reviews on destinations they have visited
 
 ### Stage 6: Basic layout  
 
-After we established the main functionalities we wanted from our app, we began working on the basic layout. We wanted the user to be greeted by a welcome page, with links to an About Us page, a joke Disclaimer page, and a page with a little bit more info about us and the project.
+Once we had set ot our basic requirements, we got started on the basic layout of the site in line with our wireframes. 
 
 ![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
 
@@ -158,7 +158,7 @@ We tested functions repeatedly as we went along and got each other to test these
 
 ### Stage 9: Styling  
 
-We went through several iterations of our website, building on the style as we went, before we settled on the final version. We decided to go for a look that was fun and friendly - we're talking about rating cat pictures after all! - that would be welcoming to the user. We experienced a lot of issues with conflicting CSS rules in order to get the website mobile responsive, and managed to resolve all of our conflicts here just in time for presentation. Future iterations would make more use of media queries in order to avoid any conflicts when swtiching between computer and mobile.
+We knew from the start that we wanted our site to be responsive, simple, clean and easy on the eyes. We drew inspiration from Skyscanner, Trip Advisor and other sites to style our website, with destinations presented as cards. 
 
 ![Screenshot 2022-11-04 at 13 40 17](https://media.git.generalassemb.ly/user/44781/files/c61d0b1e-8965-401e-b3af-7a8081f9cd3e)
 
