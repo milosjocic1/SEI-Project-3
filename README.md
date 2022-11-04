@@ -76,11 +76,11 @@ As team leader, I worked with my teammates to come up with a clear development p
 
 ### Team leadership  
 
-We agreed as a team that I would take the role of team leader, so I made sure from the outset that we followed a clear development and task tracking process in order to ensure we could hit our goals to deliver the minimum viable product on deadline, and give ourselves additional time to focus on styling touches, stretch goals and presentation day. I took an active role in managing team members and tasks, maintaining ongoing communication with my teammates via Slack and Zoom to ensure we all stayed on target with tasks and could resolve any issues or bugs constructively and in a timely manner.
+Speaking to the team, we agreed hat I would be team leader anbd handle management of the project and development flow. As in previous projects, we collabroated to set out a clear development overview that would allow us to remain accountable, on target and achieve our goals for this app. We established minimum deliverable functionalities as well as stretch goals, and as the project progressed, I ensured that we all stuck to these as a team. Wherever issues arose, we worked ogether to resolve these and I periodically checked in with my teammates to see if they needed help, feedback or support with bugs. We used Zoom and Slack to stay in constant communication throughout the project.
 
 ### Task management  
 
-In order to create, assign and manage tasks, I created a public Trello board which all of the members of our group could access. This made working on our project much easier and allowed us to work more effectively as a group. We reviewed the Trello board each day to assign tasks, mark them as completed and create any additional tasks as required to keep track of these. You can find the link to our Trello board [here](https://trello.com/b/OvjiXE35/project3-django-djourney).
+I created a public Trello board which all of our team could access in order to track, assign and manage tasks. This really helped us work collaboratively and we reviewed the Trello board on a daily basis each day to make sure we stayed up to date on what had been done, what needed to be assigned, and what hadn't been started yet. You can find the link to our Trello board [here](https://trello.com/b/OvjiXE35/project3-django-djourney).
 
 ![Screenshot 2022-11-04 at 14 44 05](https://media.git.generalassemb.ly/user/44781/files/30dd4f83-d60d-4f03-9d8c-c330f6087327)
 
