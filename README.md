@@ -109,7 +109,7 @@ We started by drawing up an ERD to map out the relations between all of our mode
 #### Wireframes
 
 We then got to work on wireframing our site page by page.
-![image](https://media.git.generalassemb.ly/user/44781/files/b74fb9d7-4015-44e2-a1ff-7e5db2c2a89b)
+<img src="https://media.git.generalassemb.ly/user/44781/files/b74fb9d7-4015-44e2-a1ff-7e5db2c2a89b" width="500" height="300">
 ![image (1)](https://media.git.generalassemb.ly/user/44781/files/f34d814c-8202-4982-a4c3-3d3be94fb3e6)
 ![image (2)](https://media.git.generalassemb.ly/user/44781/files/4d5d79f6-4512-4ffa-bba8-0dcdb1788710)
 ![image (3)](https://media.git.generalassemb.ly/user/44781/files/c1177570-61e3-47c5-be71-fbfad99c0b06)
