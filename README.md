@@ -16,6 +16,8 @@ This project was assigned at the end of the eighth week of General Assembly’s 
 
 There are no specific installation requirements for this app since Django Djourneys runs in the browser. Simply create an account or take our four-part quiz to get started!
 
+![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
+
 ## Timeframe & Working Team
 
 We worked as a team of three over the course of a week to deliver this project. We split tasks equally to ensure we were all contributing to the project at the same level. We were an especially effective team on this project! I took the lead to manage the project and track tasks to ensure we remained on target for delivery.
@@ -144,13 +146,36 @@ We defined our basic requirements at the outset:
 
 ### Stage 6: Basic layout  
 
-Once we had set out our basic requirements, we got started on the basic layout of the site in line with our wireframes. 
+Once we had set out our basic requirements, we got started on the basic layout of the site in line with our wireframes. I created a **templates** folder in our main app directory where all of our html files would be located. We started with **base.html**, which is the file that serves as the base template for our site, with imported 3rd-party APIs, jQuery library, fonts, Bootstrap, CSS. The header contains our links to navigate the site, with additional links in the footer, while the **<main>** element uses backend code to allow us to insert other html files as the user navigates the site: 
 
-![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
+![Screenshot 2022-11-08 at 16 49 29](https://media.git.generalassemb.ly/user/44781/files/3107161d-3e90-4733-ae1e-d39209bc8d69)
+  
+The first page users see is **home.html**:
+
+![Screenshot 2022-11-08 at 16 55 25](https://media.git.generalassemb.ly/user/44781/files/a1bd7cca-990c-4d42-8e89-86388596e2ae)
+
+The HTML in this file between **{% block content %}** and **{% endblock %}** is taken as a whole block of code and slottede into the **base.html** because we have added **{% extends 'base.html' %}** at the top of the file. In this way we began building the different pages for our site, with separate HTML files for the users' profile, user registration, and destinations both collectively as well as individually. We would later add separate files for our quiz, quiz results, and search functionality: 
+
+![Screenshot 2022-11-08 at 17 04 15](https://media.git.generalassemb.ly/user/44781/files/ce434032-2000-449d-ae7a-a72a2c82973b)
 
 ### Stage 7: Structuring logic and working on functions  
 
-We delegated functions by feature to each of the members of our team and began working largely independently. 
+We delegated functions by feature to each of the members of our team:
+
+- I would work on creating user accounts, user profiles, destinations and the main quiz function 
+- One teammate would work on our search function and helping to edit the list of destinations
+- One teammate would work on user review functionality, ratings, site styling/pagination and 3rd party APIs
+
+I started by looking for a suitable list of destinations to use for our databse. I settled on a list of 250 destinations collated by Nghia Nhuyen and offered for use on her GitHub [here](https://github.com/nghia-t-nguyen/travel-bot-project/blob/main/Travel-Destinations.csv). I edited the spreadsheet to include the **Name** of the destination, my teammates entered the **Location** and updated the **Country**for each one, and I also added the **Currency**. Later, I would also add a list of specific **Keywords** to each destination, which would be use later on in our quiz function:
+
+![Screenshot 2022-11-08 at 16 15 03](https://media.git.generalassemb.ly/user/44781/files/b68386f6-8bda-490a-b160-9332774edbdd)
+
+With our basic list of destinations completed, I exported this as a .csv file and imported it into our database in PostgreSQL, taking care to deselect the ID tag when specifying the columns to import:
+
+![image](https://media.git.generalassemb.ly/user/44781/files/36b5a76c-e040-4c37-b61f-04e0509b4abf)
+![Screenshot 2022-10-02 at 15 07 33](https://media.git.generalassemb.ly/user/44781/files/69702af8-401c-4fc8-8100-885940647d60)
+  
+
 
 ### Favourite functions
 
@@ -160,7 +185,7 @@ The trick on this project was to allow the user to sign up and simultaneously cr
 
 ![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
 
-I then set two signals that would cause two additional functions to be triggered on the creation of an instance of User. This would create an instance of Profile, which would store information about the user that would then be displayed when they log into the website. This is based on the instance of User that has just been created, and was tricky to get working!
+I then set two signals that would cause two additional functions to be triggered on the creation of an instance of User. This creates an instance of Profile, which stores information about the user. This is then displayed when they log into the website. This is based on the instance of User that has just been created, and was tricky to get working at first.
 
 ![Screenshot 2022-11-04 at 16 02 35](https://media.git.generalassemb.ly/user/44781/files/24ee6053-5e0c-46b9-88b9-0cde729c38ca)
 
@@ -171,7 +196,6 @@ I wrote the quiz function - the main element of our site - using jQuery. The qui
 ![Screenshot 2022-11-04 at 13 46 00](https://media.git.generalassemb.ly/user/44781/files/7906422e-ec6f-46a0-bbbf-a999d47e2280)
 
 ![Screenshot 2022-11-04 at 13 42 33](https://media.git.generalassemb.ly/user/44781/files/653ab9e4-b22c-44b5-97b7-38b16dcfc5c5)
-
 
 ### Stage 8: Testing functions  
 
