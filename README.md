@@ -235,9 +235,16 @@ We tested our quiz repeatedly to adjust timings and fadeouts, and tested the des
 
 ### Stage 11: Bonus features  
 
-The development of our project went so well that we were able to add additional functionality, such as the option for users to leave a review on destinations they have visited before. A form on the front end allows users to leave a review on a destination: he **add_review** API is triggered when :
+The development of our project went so well that we were able to add additional functionality, such as the option for users to leave a review on destinations they have visited before. A form is shown to users on the detail page for the individual destination. Here users canleave a review on a destination:
+
+![Screenshot 2022-11-08 at 19 24 36](https://media.git.generalassemb.ly/user/44781/files/d9e89c66-d0a4-44e7-a914-a8479bf03c97)
+
+When they click submit, the **add_review** API is triggered and information in the form is captured and validated against the review form model:
 
 ![Screenshot 2022-11-08 at 19 51 14](https://media.git.generalassemb.ly/user/44781/files/fc8ec83f-7857-4be2-9edf-c35e10751ec9)
+![Screenshot 2022-11-08 at 20 28 34](https://media.git.generalassemb.ly/user/44781/files/b8cc8724-44d0-4ae9-8e6e-6cc0e6f31d1e)
+
+If the content is valid according to the structure of the Review model, this is saved in the database as a new review and then listed on the individual destination.
 
 ## Challenges
 
