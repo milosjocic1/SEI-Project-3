@@ -146,7 +146,7 @@ We defined our basic requirements at the outset:
 
 ### Stage 6: Basic layout  
 
-Once we had set out our basic requirements, we got started on the basic layout of the site in line with our wireframes. I created a **templates** folder in our main app directory where all of our html files would be located. We started with **base.html**, which is the file that serves as the base template for our site, with imported 3rd-party APIs, jQuery library, fonts, Bootstrap, CSS. The header contains our links to navigate the site, with additional links in the footer, while the **<main>** element uses backend code to allow us to insert other html files as the user navigates the site: 
+Once we had set out our basic requirements, we got started on the basic layout of the site in line with our wireframes. I created a **templates** folder in our main app directory where all of our html files would be located. We started with **base.html**, which is the file that serves as the base template for our site, with imported 3rd-party APIs, jQuery library, fonts, Bootstrap, CSS. The header contains our links to navigate the site, with additional links in the footer, while the **main** element uses backend code to allow us to insert other html files as the user navigates the site: 
 
 ![Screenshot 2022-11-08 at 16 49 29](https://media.git.generalassemb.ly/user/44781/files/3107161d-3e90-4733-ae1e-d39209bc8d69)
   
@@ -162,8 +162,8 @@ The HTML in this file between **{% block content %}** and **{% endblock %}** is 
 
 We delegated functions by feature to each of the members of our team:
 
-- I would work on creating user accounts, user profiles, destinations and the main quiz function 
-- One teammate would work on our search function and helping to edit the list of destinations
+- I would work on creating user accounts, user profiles, the list of destinations and the main quiz function 
+- One teammate would work on our search function and APIs for displaying destinations
 - One teammate would work on user review functionality, ratings, site styling/pagination and 3rd party APIs
 
 I started by looking for a suitable list of destinations to use for our databse. I settled on a list of 250 destinations collated by Nghia Nhuyen and offered for use on her GitHub [here](https://github.com/nghia-t-nguyen/travel-bot-project/blob/main/Travel-Destinations.csv). I edited the spreadsheet to include the **Name** of the destination, my teammates entered the **Location** and updated the **Country**for each one, and I also added the **Currency**. Later, I would also add a list of specific **Keywords** to each destination, which would be use later on in our quiz function:
@@ -174,6 +174,14 @@ With our basic list of destinations completed, I exported this as a .csv file an
 
 ![image](https://media.git.generalassemb.ly/user/44781/files/36b5a76c-e040-4c37-b61f-04e0509b4abf)
 ![Screenshot 2022-10-02 at 15 07 33](https://media.git.generalassemb.ly/user/44781/files/69702af8-401c-4fc8-8100-885940647d60)
+
+This allowed my teammate to begin working on creating the APIs to retrieve all destinations via our search function or when the user clicks on 'View All Destinations': 
+
+![Screenshot 2022-11-08 at 19 47 43](https://media.git.generalassemb.ly/user/44781/files/89e0f050-4273-44af-b4ba-69919883231b)
+
+as well as rendering details for individual destinations:
+
+![Screenshot 2022-11-08 at 19 49 21](https://media.git.generalassemb.ly/user/44781/files/63557125-58c5-47da-aca5-4ef51813bee9)
   
 Next, I worked on the user creation functionality. Creating the user account was simple enough with the use of a **signup** API. I wrote this to capture the information the user enters during sign-up as a POST request, validate this and then save the information as a new instance of User. With their user account now created, the user is then redirected to the index page:
 
