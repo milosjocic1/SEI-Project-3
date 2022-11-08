@@ -235,8 +235,9 @@ We tested our quiz repeatedly to adjust timings and fadeouts, and tested the des
 
 ### Stage 11: Bonus features  
 
-The development of our project went so well that we were able to add additional functionality, such as the option for users to leave a review on destinations they have visited before:
+The development of our project went so well that we were able to add additional functionality, such as the option for users to leave a review on destinations they have visited before. A form on the front end allows users to leave a review on a destination: he **add_review** API is triggered when :
 
+![Screenshot 2022-11-08 at 19 51 14](https://media.git.generalassemb.ly/user/44781/files/fc8ec83f-7857-4be2-9edf-c35e10751ec9)
 
 ## Challenges
 
