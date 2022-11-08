@@ -233,7 +233,7 @@ Our teammate focused on styling the site to make it fully mobile responsive when
 
 This means the two divs that make up our quiz are displayed one above the other instead of side-by-side on a computer:
 
-![File](https://media.git.generalassemb.ly/user/44781/files/e58aca6a-cf6f-47ed-8ed9-ee749e87e259)
+<img src="https://media.git.generalassemb.ly/user/44781/files/e58aca6a-cf6f-47ed-8ed9-ee749e87e259" height="500" width="250">
 
 ### Stage 10: Testing the site  
 
