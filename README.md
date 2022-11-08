@@ -154,7 +154,7 @@ The first page users see is **home.html**:
 
 ![Screenshot 2022-11-08 at 16 55 25](https://media.git.generalassemb.ly/user/44781/files/a1bd7cca-990c-4d42-8e89-86388596e2ae)
 
-The HTML in this file between **{% block content %}** and **{% endblock %}** is taken as a whole block of code and slottede into the **base.html** because we have added **{% extends 'base.html' %}** at the top of the file. In this way we began building the different pages for our site, with separate HTML files for the users' profile, user registration, and destinations both collectively as well as individually. We would later add separate files for our quiz, quiz results, and search functionality: 
+The HTML in this file between **{% block content %}** and **{% endblock %}** is taken as a whole block of code and slotted into the **base.html** because we have added **{% extends 'base.html' %}** at the top of the file. In this way we began building the different pages for our site, with separate HTML files for the users' profile, user registration, and destinations both collectively as well as individually. We would later add separate files for our quiz, quiz results, and search functionality: 
 
 ![Screenshot 2022-11-08 at 17 04 15](https://media.git.generalassemb.ly/user/44781/files/ce434032-2000-449d-ae7a-a72a2c82973b)
 
