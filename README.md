@@ -227,6 +227,14 @@ We knew from the start that we wanted our site to be responsive, simple, clean a
 
 ![Screenshot 2022-11-04 at 13 40 17](https://media.git.generalassemb.ly/user/44781/files/c61d0b1e-8965-401e-b3af-7a8081f9cd3e)
 
+Our teammate focused on styling the site to make it fully mobile responsive when the width of 428px is reached:
+
+![Screenshot 2022-11-08 at 20 36 55](https://media.git.generalassemb.ly/user/44781/files/0022fe4a-b558-498d-a453-4b354a37e106)
+
+This means the two divs that make up our quiz are displayed one above the other instead of side-by-side on a computer:
+
+![File](https://media.git.generalassemb.ly/user/44781/files/e58aca6a-cf6f-47ed-8ed9-ee749e87e259)
+
 ### Stage 10: Testing the site  
 
 We tested our quiz repeatedly to adjust timings and fadeouts, and tested the destination list, user signup, profile creation and API calls to make sure these were all working the way we wanted.
