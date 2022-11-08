@@ -179,10 +179,17 @@ Next, I worked on the user creation functionality. Creating the user account was
 
 ![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
 
-A form on the frontend allows the user to update their information: 
+The file **forms.py** contains a model for a form that allows the user to update their profile information: 
 
 <img width="714" alt="Screenshot 2022-11-08 at 19 17 41" src="https://media.git.generalassemb.ly/user/44781/files/8397f0b3-d898-461c-9863-09e949eed517">
+  
+This is mirrored on the frontend with the following form:
 
+![Screenshot 2022-11-08 at 19 24 36](https://media.git.generalassemb.ly/user/44781/files/76f6e361-0fab-4f98-97d4-1e1ea8bf3b99)
+
+The form is populated with their existing information, and once they click on the submit button, the **profile_update** API is triggered. The information entered in the frontend form is sent as a request to the backend, validated against the structure of the user and profile update forms, and if valid, both the user and profile objects are updated in the database:
+
+![Screenshot 2022-11-08 at 19 26 52](https://media.git.generalassemb.ly/user/44781/files/55f3a8d6-ac9b-4ec5-bb89-a70539f39da6)
 
 ### Favourite functions
 
@@ -220,7 +227,8 @@ We tested our quiz repeatedly to adjust timings and fadeouts, and tested the des
 
 ### Stage 11: Bonus features  
 
-The development of our project went so well that we were able to add additional functionality, such as the option for users to leave a review on destinations they have visited before.
+The development of our project went so well that we were able to add additional functionality, such as the option for users to leave a review on destinations they have visited before:
+
 
 ## Challenges
 
