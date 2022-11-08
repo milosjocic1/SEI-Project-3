@@ -229,9 +229,10 @@ We knew from the start that we wanted our site to be responsive, simple, clean a
 
 Our teammate focused on styling the site to make it fully mobile responsive when the width of 428px is reached:
 
+<p float="left">
 <img width="335" alt="Screenshot 2022-11-08 at 20 52 01" src="https://media.git.generalassemb.ly/user/44781/files/f232c29e-7e8c-428d-8be2-ef22c06059c7">
 <img width="337" alt="Screenshot 2022-11-08 at 20 51 35" src="https://media.git.generalassemb.ly/user/44781/files/7a329af5-598f-402f-9375-c2e39e6420cb">
-
+</p>
 
 This means the two divs that make up our quiz are displayed one above the other instead of side-by-side on a computer:
 
