@@ -8,6 +8,8 @@ This project was assigned at the end of the eighth week of General Assembly’s 
 
 [You can find Django Djourneys deployed on this link](https://https://djangodjourney.herokuapp.com/). Take the quiz and see where your next journey should take you!
 
+![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
+
 ## Getting Started/Code Installation
 
 ### Instructions
@@ -15,8 +17,6 @@ This project was assigned at the end of the eighth week of General Assembly’s 
 #### Deployed app
 
 There are no specific installation requirements for this app since Django Djourneys runs in the browser. Simply create an account or take our four-part quiz to get started!
-
-![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
 
 ## Timeframe & Working Team
 
@@ -175,17 +175,22 @@ With our basic list of destinations completed, I exported this as a .csv file an
 ![image](https://media.git.generalassemb.ly/user/44781/files/36b5a76c-e040-4c37-b61f-04e0509b4abf)
 ![Screenshot 2022-10-02 at 15 07 33](https://media.git.generalassemb.ly/user/44781/files/69702af8-401c-4fc8-8100-885940647d60)
   
+Next, I worked on the user creation functionality. Creating the user account was simple enough with the use of a **signup** API. I wrote this to capture the information the user enters during sign-up as a POST request, validate this and then save the information as a new instance of User. With their user account now created, the user is then redirected to the index page:
+
+![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
+
+A form on the frontend allows the user to update their information: 
+
+<img width="714" alt="Screenshot 2022-11-08 at 19 17 41" src="https://media.git.generalassemb.ly/user/44781/files/8397f0b3-d898-461c-9863-09e949eed517">
 
 
 ### Favourite functions
 
 #### User signup & profile creation
 
-The trick on this project was to allow the user to sign up and simultaneously create a profile for the user. Creating the user account was simple enough with the use of a signup API that captured the information entered as a POST request and created an instance of User, subsequently saving this and redirecting the user to the index page:
+The trick on this project was to allow the user to sign up and simultaneously create a profile for the user in the background. 
 
-![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
-
-I then set two signals that would cause two additional functions to be triggered on the creation of an instance of User. This creates an instance of Profile, which stores information about the user. This is then displayed when they log into the website. This is based on the instance of User that has just been created, and was tricky to get working at first.
+With the sign up API already written, I created a **signals.py** file. This contains two signals that would cause two additional functions to be triggered on the creation of an instance of User, and when they update their information. This creates an instance of Profile, which stores information about the user. This is then displayed when they log into the website, and is based on the instance of User that has just been created. It was tricky to get working at first, but by using console.log on each line of my code, I was able to pinpoint my error, which was an incorrect import statement.
 
 ![Screenshot 2022-11-04 at 16 02 35](https://media.git.generalassemb.ly/user/44781/files/24ee6053-5e0c-46b9-88b9-0cde729c38ca)
 
