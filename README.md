@@ -152,6 +152,27 @@ Once we had set out our basic requirements, we got started on the basic layout o
 
 We delegated functions by feature to each of the members of our team and began working largely independently. 
 
+### Favourite functions
+
+#### User signup & profile creation
+
+The trick on this project was to allow the user to sign up and simultaneously create a profile for the user. Creating the user account was simple enough with the use of a signup API that captured the information entered as a POST request and created an instance of User, subsequently saving this and redirecting the user to the index page:
+
+![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
+
+I then set two signals that would cause two additional functions to be triggered on the creation of an instance of User. This would create an instance of Profile, which would store information about the user that would then be displayed when they log into the website. This is based on the instance of User that has just been created, and was tricky to get working!
+
+![Screenshot 2022-11-04 at 16 02 35](https://media.git.generalassemb.ly/user/44781/files/24ee6053-5e0c-46b9-88b9-0cde729c38ca)
+
+#### Destination Quiz (rango-query.js)
+
+I wrote the quiz function - the main element of our site - using jQuery. The quiz is actually structured as a form with a hidden input tag that contains an empty value attribute. The quiz itself is composed of a series of four questions. The user has three options per round, one of which is entirely neutral. With each answer they click, a specific keyword is pushed to this empty value attribute, or no keyword if their answer is neutral. When the user then clicks on the "Find my holiday!" button at the end of the quiz, the string stored in the value attribute is then used as a "profile" to search the database of destinations and return a list of destinations. Each destination in our database has a specific combination of keywords, meaning that only those destinations containing these keywords will be returned and made visible to the user, i.e. destinations matching their profile. jQuery is used to update the value attribute with each question answered, to make use of delay times and fade-out functionalities, thus providing a great experience for the person taking the quiz!
+
+![Screenshot 2022-11-04 at 13 46 00](https://media.git.generalassemb.ly/user/44781/files/7906422e-ec6f-46a0-bbbf-a999d47e2280)
+
+![Screenshot 2022-11-04 at 13 42 33](https://media.git.generalassemb.ly/user/44781/files/653ab9e4-b22c-44b5-97b7-38b16dcfc5c5)
+
+
 ### Stage 8: Testing functions  
 
 Testing functions along the way is how we managed to stay on track for delivery and ensure we minimised the risk of bugs. We used a lot of console.logs to capture the information we were generating and see what extra code was needed to achieve the functionality we wanted. We also got the other members of our team to test our code and look through it to make sure we didn't miss anything critical.
@@ -192,26 +213,6 @@ The fact that our project is fully responsive is a big win:
                                                                                                                             
 I'm also very happy that with just a week or so of Python under our belts, we were able to produce an app of this caliber. I personally struggled with adjusting from JavaScript to Python in the beginning stages, but working with my team to build an app we could be proud of and resolving issues along the way, my confidence in the language grew and I am very proud of the product we were able to deliver.
                                                                                                                             
-### Favourite functions
-
-#### User signup & profile creation
-
-The trick on this project was to allow the user to sign up and simultaneously create a profile for the user. Creating the user account was simple enough wiht the use of a signup API that captured the information entered as a POST request and created an instance of User, subsequently saving this and redirecting the user to the index page:
-
-![Screenshot 2022-11-04 at 15 58 41](https://media.git.generalassemb.ly/user/44781/files/8f1d03f5-a926-4e14-b4a1-92428c30cfb7)
-
-I then set two signals that would cause two additional functions to be triggered on the creation of an instance of User. This would create an instance of Profile, which would store information about the user that would then be displayed when they log into the website. This is based on the instance of User that has just been created, and was tricky to get working!
-
-![Screenshot 2022-11-04 at 16 02 35](https://media.git.generalassemb.ly/user/44781/files/24ee6053-5e0c-46b9-88b9-0cde729c38ca)
-
-#### Destination Quiz (rango-query.js)
-
-I wrote the quiz function - the main element of our site - using jQuery. The quiz is actually structured as a form with a hidden input tag that contains an empty value attribute. The quiz itself is composed of a series of four questions. The user has three options per round, one of which is entirely neutral. With each answer they click, a specific keyword is pushed to this empty value attribute, or no keyword if their answer is neutral. When the user then clicks on the "Find my holiday!" button at the end of the quiz, the string stored in the value attribute is then used as a "profile" to search the database of destinations and return a list of destinations. Each destination in our database has a specific combination of keywords, meaning that only those destinations containing these keywords will be returned and made visible to the user, i.e. destinations matching their profile. jQuery is used to update the value attribute with each question answered, to make use of delay times and fade-out functionalities, thus providing a great experience for the person taking the quiz!
-
-![Screenshot 2022-11-04 at 13 46 00](https://media.git.generalassemb.ly/user/44781/files/7906422e-ec6f-46a0-bbbf-a999d47e2280)
-
-![Screenshot 2022-11-04 at 13 42 33](https://media.git.generalassemb.ly/user/44781/files/653ab9e4-b22c-44b5-97b7-38b16dcfc5c5)
-
 ## Key Learnings & Takeaways
 
 This project taught me that working in a team can be fun and seamless when you establish your criteria and process clearly from the outset. We worked so well as a team that our communication was always effortless, productive and led to us resolving issues collaboratively in a very short time. Although I personally prefer JavaScript, I learned that I can do a lot with Python, and this project gave me a much better understanding of the language. I feel more confident using Python after implementing it on this project.
@@ -222,4 +223,4 @@ Heroku periodically deletes images, so some images such as profile photos will n
 
 ## Future Improvements
 
-In future versions of Django Djourneys, I would want to allow users to be able to add destinations - subject to approval by an administrator. These would require checking to ensure multiple versions of the same destination do not get added to the database. I would also add in forwarding to e.g. Skyscanner to allow users to check and book flights to the destination of their choice.
+In future versions of Django Djourneys, I want to allow users to be able to add destinations - subject to approval by an administrator. These would require checking to ensure multiple versions of the same destination do not get added to the database. I would also add in forwarding to e.g. Skyscanner to allow users to check and book flights to the destination of their choice.
