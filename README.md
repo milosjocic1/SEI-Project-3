@@ -223,18 +223,22 @@ Testing functions along the way is how we managed to stay on track for delivery 
 
 ### Stage 9: Styling  
 
-We knew from the start that we wanted our site to be responsive, simple, clean and easy on the eyes. We drew inspiration from Skyscanner, Trip Advisor and other sites to style our website, with destinations presented as cards. 
+We knew from the start that we wanted our site to be responsive, simple, clean and easy on the eyes. We drew inspiration from Skyscanner, Trip Advisor and other sites to style our website, with destinations presented as cards: 
 
 ![Screenshot 2022-11-04 at 13 40 17](https://media.git.generalassemb.ly/user/44781/files/c61d0b1e-8965-401e-b3af-7a8081f9cd3e)
 
-Our teammate focused on styling the site to make it fully mobile responsive when the width of 428px is reached:
+When all destinations are displayed on the **destinations/index.html**, we first start with a div that has the classes of **"row card-group"**. A separate **card** div is then created for each destination, containing the destination image, name, review, and other details:
+
+![Screenshot 2022-11-09 at 10 30 31](https://media.git.generalassemb.ly/user/44781/files/6300fc11-9b16-470b-ab9c-8c5d082c7d86)
+
+Providing feedback as a team, our teammate who focused on styling the site to make it fully mobile responsive when the width of 428px is reached:
 
 <p float="left">
 <img width="335" alt="Screenshot 2022-11-08 at 20 52 01" src="https://media.git.generalassemb.ly/user/44781/files/f232c29e-7e8c-428d-8be2-ef22c06059c7">
 <img width="337" alt="Screenshot 2022-11-08 at 20 51 35" src="https://media.git.generalassemb.ly/user/44781/files/7a329af5-598f-402f-9375-c2e39e6420cb">
 </p>
 
-This means the two divs that make up our quiz are displayed one above the other instead of side-by-side on a computer:
+This means e.g. that the two divs that make up our quiz are displayed one above the other instead of side-by-side on a computer, and the font size is reduced to fit within the respective divs throughout the site:
 
 <img src="https://media.git.generalassemb.ly/user/44781/files/e58aca6a-cf6f-47ed-8ed9-ee749e87e259" height="500" width="250">
 
