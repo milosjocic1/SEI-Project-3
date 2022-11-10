@@ -6,7 +6,7 @@ This project was assigned at the end of the eighth week of General Assembly’s 
 
 ## Deployment link
 
-[You can find Django Djourneys deployed on this link](https://https://djangodjourney.herokuapp.com/). Take the quiz and see where your next journey should take you!
+[You can find Django Djourneys deployed on this link](https://djangodjourney.herokuapp.com/). Take the quiz and see where your next journey should take you!
 
 ![Screenshot 2022-11-04 at 13 36 24](https://media.git.generalassemb.ly/user/44781/files/ac47f2d6-d2d4-4e8a-b70d-e2e896eedb71)
 
