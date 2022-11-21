@@ -53,6 +53,8 @@ The first stage consisted of brainstorming ideas for the project, setting up the
 As a group we decided on a holiday destination app. Taking inspiration from the Penhaligon website's fragrance quiz, we thought it would be a great idea to incorporate a quiz that would suggest holiday destinations based on the user's preferences. 
 
 With the idea in mind, we created an ERD to establish the model relations of the app and wireframes to get a picture of how we wanted everything to look. These were created on Figma which you can view [here](https://www.figma.com/file/W85hBPu2LqPGj9Sj0xfmJD/Django-Djourney?node-id=0%3A1).
+![](![Screenshot 2022-11-21 at 11 48 02](https://user-images.githubusercontent.com/99926954/203045555-712946c2-0385-45d5-a08a-8e50258c81e0.png)
+)
 
 We then wrote out user stories to outline all the features we wanted to include in our app:
 - As an unregistered user, I want a function to sign up to the site
