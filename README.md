@@ -54,15 +54,11 @@ As a group we decided on a holiday destination app. Taking inspiration from the 
 
 With the idea in mind, we created an ERD to establish the model relations of the app and wireframes to get a picture of how we wanted everything to look. These were created on Figma which you can view [here](https://www.figma.com/file/W85hBPu2LqPGj9Sj0xfmJD/Django-Djourney?node-id=0%3A1).
 ![Screenshot 2022-11-21 at 11 48 02](https://user-images.githubusercontent.com/99926954/203045555-712946c2-0385-45d5-a08a-8e50258c81e0.png)
-)
 ![Screenshot 2022-11-21 at 11 54 25](https://user-images.githubusercontent.com/99926954/203046123-9e295416-24ba-4200-bdc9-418faa689991.png)
 ![Screenshot 2022-11-21 at 11 54 58](https://user-images.githubusercontent.com/99926954/203046264-2b0224ce-d6ba-48f5-a598-b1bdd69da116.png)
 ![Screenshot 2022-11-21 at 11 55 20](https://user-images.githubusercontent.com/99926954/203046388-4770bcd7-5505-4ad6-8d70-6ee12af5144b.png)
 ![Screenshot 2022-11-21 at 11 55 40](https://user-images.githubusercontent.com/99926954/203046485-157aa3d4-d9a7-4815-b164-3634436d3065.png)
-
-
-
-
+ 
 We then wrote out user stories to outline all the features we wanted to include in our app:
 - As an unregistered user, I want a function to sign up to the site
 - As an unregistered user, I want to know what the site is about
@@ -178,7 +174,7 @@ class Review(models.Model):
 Outcome:
 ![image](https://i.imgur.com/S85tuki.png)
 
-The next major step in the project was creating the quiz. My teammate worked using jQuery in the rango-query.js file to create the quiz animations and store the results, and I helped with fetching the suggested destinations based on the results of the quiz. Each selection in the quiz was stored in a list keywords, and I used the .filter Python method to return countries that had the same keywords stored in the database. In order for the quiz to always provide suggestions, I had to ensure that there was at least one instance of each possible combination of keywords in the database for the 250 destinations. 
+The next major step in the project was creating the quiz. My teammate worked using jQuery in the rango-query.js file to create the quiz animations and store the results, and I helped with fetching the suggested destinations based on the results of the quiz. Each selection in the quiz was stored in a list of keywords, and I used the .filter Python method to return countries that had the same keywords stored in the database. In order for the quiz to always provide suggestions, I had to ensure that there was at least one instance of each possible combination of keywords in the database for the 250 destinations. 
 
 ```
 def destinations_index(request):
@@ -198,7 +194,7 @@ else:
 
 Throughout the creation of the application, everyone in the team was constantly testing the features to check that everything was operating as it should be. This allowed us to stay on top of our progress in getting the site to function. When we encountered bugs, we collectively approached the issues and used a lot of print / console.log to pinpoint which information was missing, pointing us to where we were making mistakes. 
 
-In terms of styling, we wanted our site to look clean and for it to be fully mobile responsive. Our teammate that focused on the styling was frequently consulting us for feedback and did a fantastic job of making the site look great- especially on mobile. 
+In terms of styling, we wanted our site to look clean and for it to be fully mobile responsive. Our teammate that focused on the styling was frequently consulting us for feedback and did a fantastic job of making the site look great, especially on mobile. 
 
 ### Bonus features / stretch goals 
 
@@ -207,14 +203,14 @@ Two features that we were really happy with were both 3rd-party APIs that displa
 
 ## Challenges
 
-The search functionality, while appearing concise in its final form, was definitely a huge task for me. Considering it was my first project using Python, I had to read a lot of documentation and work together with my teammates to find a solution through a lot of trial and error. 
+The search functionality, while appearing concise in its final form, was definitely a huge task for me. Considering it was my first project using Python, I had to read a lot of documentation and work together with my teammates to find a solution. I attempted it with various methods and consistently used trial and error alongside many print statements to identify which parts of my code were working and which weren't. Eventually this payed off and I found a solution that worked well. 
 
 ## Wins 
 Having a fully functioning quiz that actually tailors destinations to the combination of answers given by the user was a massive win. It took a lot of communication and cooperation between the whole team to get that working, and I'm very proud that we made it happen. 
 Having a week to create an app with Python was a daunting task for me as I had been used to JavaScript at that time, and learning Python from scratch was frustrating at times. However, with practice and consistency my confidence with Python grew significantly in a short time, and I really appreciate the language's ease of comprehension and utility now that I have a better grasp of it. 
 
 ## Key Learnings
-I was very pleased with how well my team worked together, from delegating roles evenly to providing feedback and cooperating with eachother on tasks where we needed eachother's help. It showed me that establishing a clear plan and engaging in meaningful communication is key to a successful team. 
+I was very pleased with how well my team worked together, from delegating roles evenly to providing feedback and cooperating with each other on tasks where we needed each other's help. It showed me that establishing a clear plan and engaging in meaningful communication is key to a successful team. 
 
 This project was a great introduction to Python for me and massively improved my understanding of the language. From this I learned that getting stuck in and creating applications, even if you initially feel out of your depth, is the best way to learn a new language and framework. 
 
