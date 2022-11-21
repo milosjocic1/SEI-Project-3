@@ -9,13 +9,13 @@ The objective of this project was to create a web application with Python using 
 ## Brief
 
 Goals
-- Create the application using at least 2 related models, one of which should be a user
+- Create the application using at least two related models, one of which should be a user
 - Manage team contributions and collaboration using a standard Git flow on GitHub
 - Include all major CRUD functions for at least one of your models
 - Add authentication AND authorization (page protection) to restrict access to appropriate users
--   User must be able to sign up or login
--   Signed in user must be able to change password and logout
--   Change password and logout must only be available to logged in users
+- User must be able to sign up or login
+- Signed in user must be able to change password and logout
+- Change password and logout must only be available to logged in users
 - Layout and style your front-end with clean & well-formatted CSS, with or without a framework
 - Deploy your application online so it's publicly accessible
 
@@ -47,7 +47,8 @@ Django Djourney has no installation requirements, simply visit the Heroku app an
 ## Development Process
 
 ### Stage 1: Planning
-The first stage consisted of brainstorming ideas for the project, setting up the Git repository and creating a Trello board to manage tasks. [Here is a link to the Trello board.](https://trello.com/b/OvjiXE35/project3-django-djourney)
+The first stage consisted of brainstorming ideas for the project, setting up the Git repository and creating a Trello board to manage tasks. Tasks were then delegated evenly as we all felt we had a similar level of understanding of Python and Django at that moment. [Here is a link to the Trello board.](https://trello.com/b/OvjiXE35/project3-django-djourney)
+![](https://i.imgur.com/LPF42M8.png)
 
 As a group we decided on a holiday destination app. Taking inspiration from the Penhaligon website's fragrance quiz, we thought it would be a great idea to incorporate a quiz that would suggest holiday destinations based on the user's preferences. 
 
